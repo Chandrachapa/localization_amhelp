@@ -7,7 +7,7 @@
 <AnyLogicWorkspace WorkspaceVersion="1.9" AnyLogicVersion="8.7.6.202107211643" AlpVersion="8.7.2">
 <Model>
 	<Id>1611404922978</Id>
-	<Name><![CDATA[locv17_globalcsp_town]]></Name>
+	<Name><![CDATA[locv17_globalcsp_townv2]]></Name>
 	<EngineVersion>6</EngineVersion>
 	<JavaPackageName><![CDATA[am_help_with_buffer_tr]]></JavaPackageName>
 	<ModelTimeUnit><![CDATA[Second]]></ModelTimeUnit>
@@ -402,6 +402,18 @@ import java.util.*;]]></Import>
 						<Type><![CDATA[int]]></Type>        
 					</Properties>
 				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1630574625845</Id>
+					<Name><![CDATA[available_truckid]]></Name>
+					<X>510</X><Y>-120</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+					</Properties>
+				</Variable>
 				<Variable Class="Parameter">
 					<Id>1611406082121</Id>
 					<Name><![CDATA[requiredEmergCalls]]></Name>
@@ -512,7 +524,7 @@ import java.util.*;]]></Import>
 						<UnitType><![CDATA[NONE]]></UnitType>
 						<SdArray>false</SdArray>
 						<DefaultValue Class="CodeValue">
-							<Code><![CDATA[5000]]></Code>
+							<Code><![CDATA[1000]]></Code>
 						</DefaultValue>
 						<ParameterEditor>
 							<Id>1611406082135</Id>
@@ -2251,132 +2263,6 @@ import java.util.*;]]></Import>
 					</ParameterToDatabaseColumnMapping>
 				</EmbeddedObject>
 				<EmbeddedObject>
-					<Id>1620196547355</Id>
-					<Name><![CDATA[gNBs]]></Name>
-					<X>350</X><Y>-50</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<PresentationId>1611405084529</PresentationId>
-					<ActiveObjectClass>
-						<PackageName><![CDATA[am_help_with_buffer_tr]]></PackageName>
-						<ClassName><![CDATA[gNB]]></ClassName>
-					</ActiveObjectClass>
-					<GenericParameterSubstitute>
-						<GenericParameterSubstituteReference>
-							<PackageName><![CDATA[am_help_with_buffer_tr]]></PackageName>
-							<ClassName><![CDATA[gNB]]></ClassName>
-							<ItemName><![CDATA[1611405072611]]></ItemName>
-						</GenericParameterSubstituteReference>
-					</GenericParameterSubstitute>
-					<Parameters>
-						<Parameter>
-							<Name><![CDATA[locx]]></Name>
-						</Parameter>
-						<Parameter>
-							<Name><![CDATA[locy]]></Name>
-						</Parameter>
-						<Parameter>
-							<Name><![CDATA[received_emerg_calls]]></Name>
-						</Parameter>
-						<Parameter>
-							<Name><![CDATA[aoa_confidence]]></Name>
-						</Parameter>
-					</Parameters>
-					<ReplicationFlag>true</ReplicationFlag>
-					<Replication Class="CodeValue">
-						<Code><![CDATA[100]]></Code>
-					</Replication>
-					<CollectionType>ARRAY_LIST_BASED</CollectionType>
-					<InEnvironment>true</InEnvironment>	
-					<InitialLocationType>XYZ</InitialLocationType>
-					<XCode Class="DatabaseQueryCodeValue">
-						<Type>SELECT_UNIQUE_VALUE</Type>
-						<TableReference>
-							<PackageName><![CDATA[am_help_with_buffer_tr]]></PackageName>
-							<ClassName><![CDATA[town_7gnblocs]]></ClassName>
-						</TableReference>
-						<Condition>
-							<ColumnReference>
-							</ColumnReference>
-							<Operator>EQUALS</Operator>
-						</Condition>
-						<ColumnReference>
-							<PackageName><![CDATA[am_help_with_buffer_tr]]></PackageName>
-							<ClassName><![CDATA[town_7gnblocs]]></ClassName>
-							<ItemName><![CDATA[locx]]></ItemName>
-						</ColumnReference>
-					</XCode>
-					<YCode Class="DatabaseQueryCodeValue">
-						<Type>SELECT_UNIQUE_VALUE</Type>
-						<TableReference>
-							<PackageName><![CDATA[am_help_with_buffer_tr]]></PackageName>
-							<ClassName><![CDATA[town_7gnblocs]]></ClassName>
-						</TableReference>
-						<Condition>
-							<ColumnReference>
-							</ColumnReference>
-							<Operator>EQUALS</Operator>
-						</Condition>
-						<ColumnReference>
-							<PackageName><![CDATA[am_help_with_buffer_tr]]></PackageName>
-							<ClassName><![CDATA[town_7gnblocs]]></ClassName>
-							<ItemName><![CDATA[locy]]></ItemName>
-						</ColumnReference>
-					</YCode>
-					<ZCode Class="CodeValue">
-						<Code><![CDATA[0]]></Code>
-					</ZCode>
-					<ColumnCode Class="CodeValue">
-						<Code><![CDATA[0]]></Code>
-					</ColumnCode>
-					<RowCode Class="CodeValue">
-						<Code><![CDATA[0]]></Code>
-					</RowCode>
-					<LatitudeCode Class="CodeValue">
-						<Code><![CDATA[0]]></Code>
-					</LatitudeCode>
-					<LongitudeCode Class="CodeValue">
-						<Code><![CDATA[0]]></Code>
-					</LongitudeCode>
-					<LocationNameCode Class="CodeValue">
-						<Code><![CDATA[""]]></Code>
-					</LocationNameCode>
-					<InitializationType>LOAD_FROM_DATABASE</InitializationType>
-					<InitializationDatabaseTableQuery>
-						<TableReference>
-							<PackageName><![CDATA[am_help_with_buffer_tr]]></PackageName>
-							<ClassName><![CDATA[town_7gnblocs]]></ClassName>
-						</TableReference>
-					</InitializationDatabaseTableQuery>
-					<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
-					<QuantityColumn>
-					</QuantityColumn>
-					<ParameterToDatabaseColumnMapping>
-						<Item>
-							<Key>
-								FAKE_PARAMETER_LOCATION_X_xjal
-							</Key>
-							<Value>
-								<PackageName><![CDATA[am_help_with_buffer_tr]]></PackageName>
-								<ClassName><![CDATA[town_7gnblocs]]></ClassName>
-								<ItemName><![CDATA[locx]]></ItemName>
-							</Value>
-						</Item>
-						<Item>
-							<Key>
-								FAKE_PARAMETER_LOCATION_Y_xjal
-							</Key>
-							<Value>
-								<PackageName><![CDATA[am_help_with_buffer_tr]]></PackageName>
-								<ClassName><![CDATA[town_7gnblocs]]></ClassName>
-								<ItemName><![CDATA[locy]]></ItemName>
-							</Value>
-						</Item>	
-					</ParameterToDatabaseColumnMapping>
-				</EmbeddedObject>
-				<EmbeddedObject>
 					<Id>1619519201789</Id>
 					<Name><![CDATA[nodes]]></Name>
 					<X>210</X><Y>-200</Y>
@@ -2560,6 +2446,211 @@ import java.util.*;]]></Import>
 					<QuantityColumn>
 					</QuantityColumn>
 				</EmbeddedObject>
+				<EmbeddedObject>
+					<Id>1630574625849</Id>
+					<Name><![CDATA[rescue_teams]]></Name>
+					<X>510</X><Y>-90</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<PresentationId>1630574625843</PresentationId>
+					<ActiveObjectClass>
+						<PackageName><![CDATA[am_help_with_buffer_tr]]></PackageName>
+						<ClassName><![CDATA[rescue_team]]></ClassName>
+					</ActiveObjectClass>
+					<GenericParameterSubstitute>
+						<GenericParameterSubstituteReference>
+							<PackageName><![CDATA[am_help_with_buffer_tr]]></PackageName>
+							<ClassName><![CDATA[rescue_team]]></ClassName>
+							<ItemName><![CDATA[1619178910710]]></ItemName>
+						</GenericParameterSubstituteReference>
+					</GenericParameterSubstitute>
+					<Parameters>
+					</Parameters>
+					<ReplicationFlag>true</ReplicationFlag>
+					<Replication Class="CodeValue">
+						<Code><![CDATA[1]]></Code>
+					</Replication>
+					<CollectionType>ARRAY_LIST_BASED</CollectionType>
+					<InEnvironment>true</InEnvironment>	
+					<InitialSpeedCode Class="CodeUnitValue">
+						<Code><![CDATA[1]]></Code>
+						<Unit Class="SpeedUnits"><![CDATA[MPS]]></Unit>
+					</InitialSpeedCode>
+					<InitialLocationType>XYZ</InitialLocationType>
+					<XCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</XCode>
+					<YCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</YCode>
+					<ZCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</ZCode>
+					<ColumnCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</ColumnCode>
+					<RowCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</RowCode>
+					<LatitudeCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</LatitudeCode>
+					<LongitudeCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</LongitudeCode>
+					<LocationNameCode Class="CodeValue">
+						<Code><![CDATA[""]]></Code>
+					</LocationNameCode>
+					<InitializationType>SPECIFIED_NUMBER</InitializationType>
+					<InitializationDatabaseTableQuery>
+						<TableReference>
+						</TableReference>
+					</InitializationDatabaseTableQuery>
+					<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+					<QuantityColumn>
+					</QuantityColumn>
+				</EmbeddedObject>
+				<EmbeddedObject>
+					<Id>1630581416901</Id>
+					<Name><![CDATA[gNBs]]></Name>
+					<X>510</X><Y>-50</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<PresentationId>1630581438657</PresentationId>
+					<ActiveObjectClass>
+						<PackageName><![CDATA[am_help_with_buffer_tr]]></PackageName>
+						<ClassName><![CDATA[gNB]]></ClassName>
+					</ActiveObjectClass>
+					<GenericParameterSubstitute>
+						<GenericParameterSubstituteReference>
+							<PackageName><![CDATA[am_help_with_buffer_tr]]></PackageName>
+							<ClassName><![CDATA[gNB]]></ClassName>
+							<ItemName><![CDATA[1630581416896]]></ItemName>
+						</GenericParameterSubstituteReference>
+					</GenericParameterSubstitute>
+					<Parameters>
+						<Parameter>
+							<Name><![CDATA[locx]]></Name>
+							<Value Class="DatabaseQueryCodeValue">
+								<Type>SELECT_UNIQUE_VALUE</Type>
+								<TableReference>
+									<PackageName><![CDATA[am_help_with_buffer_tr]]></PackageName>
+									<ClassName><![CDATA[town_7gnblocs]]></ClassName>
+								</TableReference>
+								<Condition>
+									<ColumnReference>
+									</ColumnReference>
+									<Operator>EQUALS</Operator>
+								</Condition>
+								<ColumnReference>
+									<PackageName><![CDATA[am_help_with_buffer_tr]]></PackageName>
+									<ClassName><![CDATA[town_7gnblocs]]></ClassName>
+									<ItemName><![CDATA[locx]]></ItemName>
+								</ColumnReference>
+							</Value>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[locy]]></Name>
+							<Value Class="DatabaseQueryCodeValue">
+								<Type>SELECT_UNIQUE_VALUE</Type>
+								<TableReference>
+									<PackageName><![CDATA[am_help_with_buffer_tr]]></PackageName>
+									<ClassName><![CDATA[town_7gnblocs]]></ClassName>
+								</TableReference>
+								<Condition>
+									<ColumnReference>
+									</ColumnReference>
+									<Operator>EQUALS</Operator>
+								</Condition>
+								<ColumnReference>
+									<PackageName><![CDATA[am_help_with_buffer_tr]]></PackageName>
+									<ClassName><![CDATA[town_7gnblocs]]></ClassName>
+									<ItemName><![CDATA[locy]]></ItemName>
+								</ColumnReference>
+							</Value>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[received_emerg_calls]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[aoa_confidence]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[ind]]></Name>
+						</Parameter>
+					</Parameters>
+					<ReplicationFlag>true</ReplicationFlag>
+					<Replication Class="CodeValue">
+						<Code><![CDATA[100]]></Code>
+					</Replication>
+					<CollectionType>ARRAY_LIST_BASED</CollectionType>
+					<InEnvironment>true</InEnvironment>	
+					<InitialLocationType>XYZ</InitialLocationType>
+					<XCode Class="CodeValue">
+						<Code><![CDATA[self.locx]]></Code>
+					</XCode>
+					<YCode Class="CodeValue">
+						<Code><![CDATA[self.locy]]></Code>
+					</YCode>
+					<ZCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</ZCode>
+					<ColumnCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</ColumnCode>
+					<RowCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</RowCode>
+					<LatitudeCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</LatitudeCode>
+					<LongitudeCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</LongitudeCode>
+					<LocationNameCode Class="CodeValue">
+						<Code><![CDATA[""]]></Code>
+					</LocationNameCode>
+					<InitializationType>LOAD_FROM_DATABASE</InitializationType>
+					<InitializationDatabaseTableQuery>
+						<TableReference>
+							<PackageName><![CDATA[am_help_with_buffer_tr]]></PackageName>
+							<ClassName><![CDATA[town_7gnblocs]]></ClassName>
+						</TableReference>
+					</InitializationDatabaseTableQuery>
+					<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+					<QuantityColumn>
+					</QuantityColumn>
+					<ParameterToDatabaseColumnMapping>
+						<Item>
+							<Key>
+								<PackageName><![CDATA[am_help_with_buffer_tr]]></PackageName>
+								<ClassName><![CDATA[gNB]]></ClassName>
+								<ItemName><![CDATA[locx]]></ItemName>
+							</Key>
+							<Value>
+								<PackageName><![CDATA[am_help_with_buffer_tr]]></PackageName>
+								<ClassName><![CDATA[town_7gnblocs]]></ClassName>
+								<ItemName><![CDATA[locx]]></ItemName>
+							</Value>
+						</Item>
+						<Item>
+							<Key>
+								<PackageName><![CDATA[am_help_with_buffer_tr]]></PackageName>
+								<ClassName><![CDATA[gNB]]></ClassName>
+								<ItemName><![CDATA[locy]]></ItemName>
+							</Key>
+							<Value>
+								<PackageName><![CDATA[am_help_with_buffer_tr]]></PackageName>
+								<ClassName><![CDATA[town_7gnblocs]]></ClassName>
+								<ItemName><![CDATA[locy]]></ItemName>
+							</Value>
+						</Item>	
+					</ParameterToDatabaseColumnMapping>
+				</EmbeddedObject>
 			</EmbeddedObjects>
 
 			<Presentation>
@@ -2683,6 +2774,25 @@ import java.util.*;]]></Import>
 					<FillColor>-5952982</FillColor>
 					<FillMaterial>null</FillMaterial>
 				</Rectangle>
+				<EmbeddedObjectPresentation>
+					<Id>1630574625843</Id>
+					<Name><![CDATA[rescue_teams_presentation]]></Name>
+					<X>650</X><Y>-120</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<DrawingMode>AGENT_CURRENT_POSITION</DrawingMode>
+					<ScaleType>AUTOMATICALLY_CALCULATED</ScaleType>
+					<GISScaleForRealEmbeddedObjectPresentationSize>1000</GISScaleForRealEmbeddedObjectPresentationSize>
+					<GISScaleForFixedEmbeddedObjectPresentationSize>1000000000</GISScaleForFixedEmbeddedObjectPresentationSize>
+					<Latitude>0.0</Latitude>
+					<Longitude>0.0</Longitude>
+				</EmbeddedObjectPresentation>
 			</Presentation>
 
 				</Level>
@@ -2706,9 +2816,9 @@ import java.util.*;]]></Import>
 					<Longitude>0.0</Longitude>
 				</EmbeddedObjectPresentation>
 				<EmbeddedObjectPresentation>
-					<Id>1611405084529</Id>
-					<Name><![CDATA[gNBs_presentation]]></Name>
-					<X>450</X><Y>-50</Y>
+					<Id>1623832902235</Id>
+					<Name><![CDATA[gcsp_nodes_presentation]]></Name>
+					<X>190</X><Y>-250</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -2725,9 +2835,9 @@ import java.util.*;]]></Import>
 					<Longitude>0.0</Longitude>
 				</EmbeddedObjectPresentation>
 				<EmbeddedObjectPresentation>
-					<Id>1623832902235</Id>
-					<Name><![CDATA[gcsp_nodes_presentation]]></Name>
-					<X>190</X><Y>-250</Y>
+					<Id>1630581438657</Id>
+					<Name><![CDATA[gNBs_presentation]]></Name>
+					<X>610</X><Y>-50</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4336,6 +4446,9 @@ if(!alreadyCalled.contains(id)&&main.successfully_reached_ids.get(String.valueOf
 				main.gNBs.get(mygNB).hit_time_array.add(time(SECOND));	
 	  			main.gNBs.get(mygNB).emergcallids.add(String.valueOf(id)+";"+String.valueOf(msgid));
 				send("activate_gNB",main.gNBs.get(mygNB));
+				main.gNBs.get(mygNB).ind = mygNB;
+				main.gNBs.get(mygNB).locx = main.gNBs.get(mygNB).locx ;
+				main.gNBs.get(mygNB).locy = main.gNBs.get(mygNB).locy ;	
 				
 	  			main.nodeid_loc_est.put(String.valueOf(id),"100.0"+";"+"100.0");
 				main.alreadyAtgNB.add(String.valueOf(id));
@@ -5198,7 +5311,10 @@ else
 				    main.avgLatency_distance += latencyPerDistance;
 				    main.energy_source_relay_main += transmitE;
 					//for localization 
-					send("activate_gNB",main.gNBs.get(mygNB));				
+					send("activate_gNB",main.gNBs.get(mygNB));
+					main.gNBs.get(mygNB).ind = mygNB;
+					main.gNBs.get(mygNB).locx = main.gNBs.get(mygNB).locx ;
+					main.gNBs.get(mygNB).locy = main.gNBs.get(mygNB).locy ;				
 		   		}   		   
 	}]]></Body>
 				</Function>
@@ -5556,1907 +5672,6 @@ return dist_est;]]></Body>
 		</ActiveObjectClass>
 		<!--   =========   Active Object Class   ========  -->
 		<ActiveObjectClass>
-			<Id>1611405072613</Id>
-			<Name><![CDATA[gNB]]></Name>
-			<ClientAreaTopLeft><X>0</X><Y>0</Y></ClientAreaTopLeft>
-			<Generic>false</Generic>
-			<GenericParameter>
-				<Id>1611405072611</Id>
-				<Name><![CDATA[1611405072611]]></Name>
-				<GenericParameterValue Class="CodeValue">
-					<Code><![CDATA[T extends Agent]]></Code>
-				</GenericParameterValue>
-				<GenericParameterLabel><![CDATA[Generic parameter:]]></GenericParameterLabel>
-			</GenericParameter>
-			<FlowChartsUsage>ENTITY</FlowChartsUsage>
-			<SamplesToKeep>100</SamplesToKeep>
-			<LimitNumberOfArrayElements>false</LimitNumberOfArrayElements>
-			<ElementsLimitValue>100</ElementsLimitValue>
-			<MakeDefaultViewArea>true</MakeDefaultViewArea>
-			<SceneGridColor/>
-			<SceneBackgroundColor/>
-			<SceneSkybox>null</SceneSkybox>
-			<AgentProperties>
-	 			<SpaceType>CONTINUOUS</SpaceType>			
-				<EnvironmentDefinesInitialLocation>true</EnvironmentDefinesInitialLocation>
-				<RotateAnimationTowardsMovement>true</RotateAnimationTowardsMovement>
-				<RotateAnimationVertically>true</RotateAnimationVertically>
-				<VelocityCode Class="CodeUnitValue">
-					<Code><![CDATA[10]]></Code>
-					<Unit Class="SpeedUnits"><![CDATA[MPS]]></Unit>
-				</VelocityCode>
-				<PhysicalLength Class="CodeUnitValue">
-					<Code><![CDATA[1]]></Code>
-					<Unit Class="LengthUnits"><![CDATA[METER]]></Unit>
-				</PhysicalLength>
-				<PhysicalWidth Class="CodeUnitValue">
-					<Code><![CDATA[1]]></Code>
-					<Unit Class="LengthUnits"><![CDATA[METER]]></Unit>
-				</PhysicalWidth>
-				<PhysicalHeight Class="CodeUnitValue">
-					<Code><![CDATA[1]]></Code>
-					<Unit Class="LengthUnits"><![CDATA[METER]]></Unit>
-				</PhysicalHeight>
-			</AgentProperties>
-			<EnvironmentProperties>
-					<EnableSteps>false</EnableSteps>
-					<StepDurationCode Class="CodeUnitValue">
-						<Code><![CDATA[1.0]]></Code>
-						<Unit Class="TimeUnits"><![CDATA[SECOND]]></Unit>
-					</StepDurationCode>
-					<SpaceType>CONTINUOUS</SpaceType>
-					<WidthCode><![CDATA[500]]></WidthCode>
-					<HeightCode><![CDATA[500]]></HeightCode>
-					<ZHeightCode><![CDATA[0]]></ZHeightCode>
-					<ColumnsCountCode><![CDATA[100]]></ColumnsCountCode>
-					<RowsCountCode><![CDATA[100]]></RowsCountCode>
-					<NeigborhoodType>MOORE</NeigborhoodType>
-					<LayoutType>USER_DEF</LayoutType>
-					<LayoutTypeApplyOnStartup>true</LayoutTypeApplyOnStartup>
-					<NetworkType>USER_DEF</NetworkType>
-					<NetworkTypeApplyOnStartup>true</NetworkTypeApplyOnStartup>
-					<ConnectionsPerAgentCode><![CDATA[2]]></ConnectionsPerAgentCode>
-					<ConnectionsRangeCode><![CDATA[50]]></ConnectionsRangeCode>
-					<NeighborLinkFractionCode><![CDATA[0.95]]></NeighborLinkFractionCode>
-					<MCode><![CDATA[10]]></MCode>
-			</EnvironmentProperties>
-			<DatasetsCreationProperties>
-				<AutoCreate>true</AutoCreate>
-					<OccurrenceAtTime>true</OccurrenceAtTime>
-					<OccurrenceDate>1611475200000</OccurrenceDate>
-					<OccurrenceTime Class="CodeUnitValue">
-						<Code><![CDATA[0]]></Code>
-						<Unit Class="TimeUnits"><![CDATA[SECOND]]></Unit>
-					</OccurrenceTime>
-					<RecurrenceCode Class="CodeUnitValue">
-						<Code><![CDATA[1]]></Code>
-						<Unit Class="TimeUnits"><![CDATA[SECOND]]></Unit>
-					</RecurrenceCode>
-			</DatasetsCreationProperties>
-			<ScaleRuler>
-				<Id>1611405072609</Id>
-				<Name><![CDATA[scale]]></Name>
-				<X>0</X><Y>-150</Y>
-				<PublicFlag>false</PublicFlag>
-				<PresentationFlag>false</PresentationFlag>
-				<ShowLabel>false</ShowLabel>
-				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-				<Length>100</Length>
-				<Rotation>0</Rotation>
-				<ScaleType>BASED_ON_LENGTH</ScaleType>
-				<ModelLength>10</ModelLength>
-				<LengthUnits>METER</LengthUnits>
-				<Scale>10</Scale>
-				<InheritedFromParentAgentType>true</InheritedFromParentAgentType>
-			</ScaleRuler>
-			<CurrentLevel>1611405072612</CurrentLevel>
-			<ConnectionsId>1611405072608</ConnectionsId>
-			<Variables>
-				<Variable Class="PlainVariable">
-					<Id>1619176811955</Id>
-					<Name><![CDATA[iter_relay]]></Name>
-					<X>50</X><Y>380</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
-						<Type><![CDATA[double]]></Type>        
-					</Properties>
-				</Variable>
-				<Variable Class="PlainVariable">
-					<Id>1619178858216</Id>
-					<Name><![CDATA[available_truckid]]></Name>
-					<X>490</X><Y>-90</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
-						<Type><![CDATA[int]]></Type>        
-					</Properties>
-				</Variable>
-				<Variable Class="PlainVariable">
-					<Id>1619200491159</Id>
-					<Name><![CDATA[flag]]></Name>
-					<X>50</X><Y>350</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
-						<Type><![CDATA[boolean]]></Type>        
-					</Properties>
-				</Variable>
-				<Variable Class="PlainVariable">
-					<Id>1619534191255</Id>
-					<Name><![CDATA[angle_est]]></Name>
-					<X>50</X><Y>410</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
-						<Type><![CDATA[double]]></Type>        
-					</Properties>
-				</Variable>
-				<Variable Class="PlainVariable">
-					<Id>1619887819080</Id>
-					<Name><![CDATA[received_msg]]></Name>
-					<X>50</X><Y>440</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
-						<Type><![CDATA[String]]></Type>        
-					</Properties>
-				</Variable>
-				<Variable Class="PlainVariable">
-					<Id>1619944032474</Id>
-					<Name><![CDATA[rssi_est]]></Name>
-					<X>520</X><Y>310</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
-						<Type><![CDATA[double]]></Type>        
-					</Properties>
-				</Variable>
-				<Variable Class="PlainVariable">
-					<Id>1619944032489</Id>
-					<Name><![CDATA[tof_act]]></Name>
-					<X>520</X><Y>340</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
-						<Type><![CDATA[double]]></Type>        
-					</Properties>
-				</Variable>
-				<Variable Class="PlainVariable">
-					<Id>1619944032491</Id>
-					<Name><![CDATA[tof_est]]></Name>
-					<X>520</X><Y>370</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
-						<Type><![CDATA[double]]></Type>        
-					</Properties>
-				</Variable>
-				<Variable Class="PlainVariable">
-					<Id>1629835903538</Id>
-					<Name><![CDATA[iter]]></Name>
-					<X>520</X><Y>400</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
-						<Type><![CDATA[double]]></Type>        
-					</Properties>
-				</Variable>
-				<Variable Class="Parameter">
-					<Id>1611405072614</Id>
-					<Name><![CDATA[locx]]></Name>
-					<X>50</X><Y>20</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
-						<Type><![CDATA[double]]></Type>
-						<UnitType><![CDATA[NONE]]></UnitType>
-						<SdArray>false</SdArray>
-						<ParameterEditor>
-							<Id>0</Id>
-							<EditorContolType>TEXT_BOX</EditorContolType>
-							<MinSliderValue><![CDATA[0]]></MinSliderValue>
-							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
-							<DelimeterType>NO_DELIMETER</DelimeterType>
-						</ParameterEditor>
-					</Properties>                 
-				</Variable>
-				<Variable Class="Parameter">
-					<Id>1611405072615</Id>
-					<Name><![CDATA[locy]]></Name>
-					<X>50</X><Y>50</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
-						<Type><![CDATA[double]]></Type>
-						<UnitType><![CDATA[NONE]]></UnitType>
-						<SdArray>false</SdArray>
-						<ParameterEditor>
-							<Id>0</Id>
-							<EditorContolType>TEXT_BOX</EditorContolType>
-							<MinSliderValue><![CDATA[0]]></MinSliderValue>
-							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
-							<DelimeterType>NO_DELIMETER</DelimeterType>
-						</ParameterEditor>
-					</Properties>                 
-				</Variable>
-				<Variable Class="Parameter">
-					<Id>1619176811966</Id>
-					<Name><![CDATA[received_emerg_calls]]></Name>
-					<X>50</X><Y>90</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
-						<Type><![CDATA[int]]></Type>
-						<UnitType><![CDATA[NONE]]></UnitType>
-						<SdArray>false</SdArray>
-						<ParameterEditor>
-							<Id>1619176811964</Id>
-							<EditorContolType>TEXT_BOX</EditorContolType>
-							<MinSliderValue><![CDATA[0]]></MinSliderValue>
-							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
-							<DelimeterType>NO_DELIMETER</DelimeterType>
-						</ParameterEditor>
-					</Properties>                 
-				</Variable>
-				<Variable Class="Parameter">
-					<Id>1619534244903</Id>
-					<Name><![CDATA[aoa_confidence]]></Name>
-					<X>50</X><Y>120</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>false</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
-						<Type><![CDATA[double]]></Type>
-						<UnitType><![CDATA[NONE]]></UnitType>
-						<SdArray>false</SdArray>
-						<DefaultValue Class="CodeValue">
-							<Code><![CDATA[0.5]]></Code>
-						</DefaultValue>
-						<ParameterEditor>
-							<Id>1619534244901</Id>
-							<EditorContolType>TEXT_BOX</EditorContolType>
-							<MinSliderValue><![CDATA[0]]></MinSliderValue>
-							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
-							<DelimeterType>NO_DELIMETER</DelimeterType>
-						</ParameterEditor>
-					</Properties>                 
-				</Variable>
-				<Variable Class="CollectionVariable">
-					<Id>1619176811939</Id>
-					<Name><![CDATA[emergcallids]]></Name>
-					<X>50</X><Y>270</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties SaveInSnapshot="true" AccessType="public" StaticVariable="false">
-						<CollectionClass><![CDATA[ArrayList]]></CollectionClass>
-						<ElementClass><![CDATA[String]]></ElementClass>
-						<ValueElementClass><![CDATA[String]]></ValueElementClass>
-					</Properties>
-
-				</Variable>
-				<Variable Class="CollectionVariable">
-					<Id>1619176811941</Id>
-					<Name><![CDATA[hit_time_array]]></Name>
-					<X>50</X><Y>240</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties SaveInSnapshot="true" AccessType="public" StaticVariable="false">
-						<CollectionClass><![CDATA[ArrayList]]></CollectionClass>
-						<ElementClass><![CDATA[Double]]></ElementClass>
-						<ValueElementClass><![CDATA[String]]></ValueElementClass>
-					</Properties>
-
-				</Variable>
-				<Variable Class="CollectionVariable">
-					<Id>1619176811943</Id>
-					<Name><![CDATA[relayids_added]]></Name>
-					<X>50</X><Y>210</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties SaveInSnapshot="true" AccessType="public" StaticVariable="false">
-						<CollectionClass><![CDATA[ArrayList]]></CollectionClass>
-						<ElementClass><![CDATA[String]]></ElementClass>
-						<ValueElementClass><![CDATA[String]]></ValueElementClass>
-					</Properties>
-
-				</Variable>
-				<Variable Class="CollectionVariable">
-					<Id>1619200961911</Id>
-					<Name><![CDATA[checkedids]]></Name>
-					<X>50</X><Y>300</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties SaveInSnapshot="true" AccessType="public" StaticVariable="false">
-						<CollectionClass><![CDATA[ArrayList]]></CollectionClass>
-						<ElementClass><![CDATA[String]]></ElementClass>
-						<ValueElementClass><![CDATA[String]]></ValueElementClass>
-					</Properties>
-
-				</Variable>
-				<Variable Class="CollectionVariable">
-					<Id>1620732281595</Id>
-					<Name><![CDATA[confidence_area]]></Name>
-					<X>50</X><Y>180</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties SaveInSnapshot="true" AccessType="public" StaticVariable="false">
-						<CollectionClass><![CDATA[LinkedHashMap]]></CollectionClass>
-						<ElementClass><![CDATA[String]]></ElementClass>
-						<ValueElementClass><![CDATA[Double]]></ValueElementClass>
-					</Properties>
-
-				</Variable>
-				<Variable Class="CollectionVariable">
-					<Id>1621240300745</Id>
-					<Name><![CDATA[loc_area_array]]></Name>
-					<X>50</X><Y>500</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties SaveInSnapshot="true" AccessType="public" StaticVariable="false">
-						<CollectionClass><![CDATA[ArrayList]]></CollectionClass>
-						<ElementClass><![CDATA[String]]></ElementClass>
-						<ValueElementClass><![CDATA[String]]></ValueElementClass>
-					</Properties>
-
-				</Variable>
-				<Variable Class="CollectionVariable">
-					<Id>1621262820829</Id>
-					<Name><![CDATA[incoming_node_array]]></Name>
-					<X>50</X><Y>530</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties SaveInSnapshot="true" AccessType="public" StaticVariable="false">
-						<CollectionClass><![CDATA[ArrayList]]></CollectionClass>
-						<ElementClass><![CDATA[String]]></ElementClass>
-						<ValueElementClass><![CDATA[String]]></ValueElementClass>
-					</Properties>
-
-				</Variable>
-			</Variables>
-			<StatechartElements>
-				<StatechartElement Class="State" ParentState="ROOT_NODE">
-					<Id>1619176811971</Id>
-					<Name><![CDATA[received_emerg_call_storage]]></Name>
-					<X>310</X><Y>80</Y>
-					<Label><X>10</X><Y>10</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties Width="100" Height="30">
-						<EntryAction><![CDATA[rescue_teams.get(available_truckid).moveTo(100,500);]]></EntryAction>
-						<FillColor/>
-					</Properties>
-				</StatechartElement>
-				<StatechartElement Class="State" ParentState="ROOT_NODE">
-					<Id>1619206777096</Id>
-					<Name><![CDATA[state]]></Name>
-					<X>450</X><Y>150</Y>
-					<Label><X>10</X><Y>10</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties Width="100" Height="30">
-						<EntryAction><![CDATA[int iter = 2;//starting data row  in excel
-
-for(int i=0;i<main.nbpaths_time.size();i++)
-	{	
-		String r = main.nbpaths_time.get(i);
-		String[] rsplit = r.split(" ");
-		
-		if(!rsplit[9].equals("6.28"))
-			{
-				//System.out.println("r: "+r);
-			}
-		write_vishaka(iter,rsplit[1],rsplit[2],rsplit[3],rsplit[4],rsplit[5],rsplit[6],rsplit[7],rsplit[8],rsplit[9],rsplit[10],rsplit[11],rsplit[12],rsplit[13],rsplit[14],rsplit[15]);
-		iter++;
-	}
-iter=2;
-for(int i=0;i<main.gnbpaths_time.size();i++)
-	{	
-		String gr = main.gnbpaths_time.get(i);
-		
-		String[] grsplit = gr.split(" ");
-		if(!grsplit[9].equals("6.28"))
-			{
-				//System.out.println("gr: "+gr);
-			}
-		write_gcsp(iter,grsplit[1],grsplit[2],grsplit[3],grsplit[4],grsplit[5],grsplit[6],grsplit[7],grsplit[8],grsplit[9],grsplit[10],grsplit[11],grsplit[12],grsplit[13],grsplit[14],grsplit[15]);
-		iter++;
-	}]]></EntryAction>
-						<FillColor/>
-					</Properties>
-				</StatechartElement>
-				<StatechartElement Class="EntryPoint" ParentState="ROOT_NODE">
-					<Id>1619176811973</Id>
-					<Name><![CDATA[emergencyplatform]]></Name>
-					<X>350</X><Y>40</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Points>
-						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>0</X><Y>40</Y></Point>
-					</Points>
-					<Properties Target="1619176811971">
-					</Properties>	
-				</StatechartElement>
-				<StatechartElement Class="Transition" ParentState="ROOT_NODE">
-					<Id>1619176811975</Id>
-					<Name><![CDATA[transition]]></Name>
-					<X>390</X><Y>110</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<Points>
-						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>-20</X><Y>30</Y></Point>
-						<Point><X>-30</X><Y>50</Y></Point>
-						<Point><X>-48</X><Y>28</Y></Point>
-						<Point><X>-70</X><Y>0</Y></Point>
-					</Points>
-					<IconOffset>20.0</IconOffset>
-					<Properties Source="1619176811971" Target="1619176811971" Trigger="condition">
-						<Action><![CDATA[//phone sends an emergency call succcesffully to the gNB
-received_emerg_calls++;
-//System.out.println("00: "+received_emerg_calls);
-//add another successful emergency call which is used to evaluate each success call
-//success call addition
-add_success_emerg_calls();
-
-//add attributes to each successful call
-success_emerg_calls.get(received_emerg_calls-1).emergcallid = emergcallids.get(emergcallids.size()-1); 
-success_emerg_calls.get(received_emerg_calls-1).hit_time = hit_time_array.get(hit_time_array.size()-1);
-
-//System.out.println("000: "+success_emerg_calls.get(received_emerg_calls-1).emergcallid );
-//add node device ids supported to carry the call
-String[] nodestring = main.successfully_reached_ids.get(emergcallids.get(emergcallids.size()-1)).split(";");
-incoming_node_array.clear();
-
-//last nodestring "done" is avoided by choosing the limit nodestring.length-1
-//add nodes which have not been added in phone agent
-for(int i=0;i<nodestring.length-1;i++)
-	{
-		String[] node_time = nodestring[i].split(" ts:");
-		
-		missed_node_localization(i);
-			
-		if(!main.nodeids_added.contains(node_time[0])&&main.incoverage_ids.contains(Integer.valueOf(node_time[0])))//localization of incoverage nodes 
-			{
-				incov_measures(i);//aoa estimate at the last relayid in main.successfully_reached_ids
-			}
-	}
-	
-incoming_node_array.clear();//clear priority_node_array
-if(main.v2_random_cost_based==true)//localization algo type 2	//v2 random cost based node consideration
-	{	
-		incoming_node_array.clear();
-		main.nbpaths++;
-		main.nbpath_nodestring.put(main.nbpaths,main.successfully_reached_ids.get(emergcallids.get(emergcallids.size()-1)));
-		for(int i=0;i<nodestring.length-1;i++)//array: in ascending order of each node's priority
-			{
-				String[] node_time = nodestring[i].split(" ts:");			
-				//System.out.println("001: "+node_time[0] );		
-				int hg = main.nodeids_added.indexOf(node_time[0]);
-				
-				main.nodes.get(hg).nb_paths_contributed++;//increase the nb times the node contributes in the relaying by 1
-				main.gcsp_nodes.get(hg).nb_paths_contributed++;
-				double node_locarea =  main.id_GPS_accuracy.get(Integer.valueOf(node_time[0]));	//GPS is available choose the GPS accuracy
-				double distancefromnearestgNB = Math.pow(Math.pow(main.phonelocx.get(node_time[0])- this.locx,2) + Math.pow(main.phonelocy.get(node_time[0])-this.locy,2),0.5);
-							
-				//based on how many paths the node belongs to
-			    int most_contributing_node = main.nodes.get(hg).nb_paths_contributed;
-				
-			    //priority objective function
-			    double priority_node = 1*node_locarea + 1*1/distancefromnearestgNB + 1*most_contributing_node;//all parameters necessary to set the priority of the node
-			     
-			    //store all relay node in priority in order of magnitude, ascending order 
-			    if(!incoming_node_array.contains(String.valueOf(priority_node)+";"+node_time[0]))
-			    	{
-			    		incoming_node_array.add(String.valueOf(priority_node)+";"+node_time[0]);		    		
-			    	}
-			}
-		int pathnumber = emergcallids.size();//path id
-		
-		for(int u=0;u<incoming_node_array.size(); u++)//relative localizing in order of priority
-			{
-				String[] incoming_node = incoming_node_array.get(u).split(";");//select priority node first out of all the nodes in the successfully reach ids array
-				String min_area_id = incoming_node[1];
-				int gk = main.nodeids_added.indexOf(min_area_id);
-				send("activate node",main.nodes.get(gk));
-				//System.out.println("0001: "+main.nodes.get(gk).nodeid);	
-				main.nodes_accessed.add(main.nodes.get(gk).nodeid);
-				main.rownumber++;
-				main.nodes.get(gk).incoverage_locx = this.locx;
-				main.nodes.get(gk).incoverage_locy = this.locy;
-				main.nodes.get(gk).pathnumber = pathnumber;
-				main.nodes.get(gk).rownumber = main.rownumber;
-				main.nodes.get(gk).considered_emergcall.add(emergcallids.get(emergcallids.size()-1));	    
-			}
-			
-		//System.out.println("00: "+incoming_node_array.size());
-		Collections.sort(incoming_node_array); 
-		//System.out.println("01: "+incoming_node_array.size());
-		for(int u=incoming_node_array.size()-1; u>=0; u--)//highest priority to lowest priority
-			{
-				String[] incoming_nodeg = incoming_node_array.get(u).split(";");//select priority node first out of all the nodes in the successfully reach ids array
-				String area_id = incoming_nodeg[1];
-				int hh = main.nodeids_added.indexOf(area_id);
-				send("activate node",main.gcsp_nodes.get(hh));
-				main.gnodes_accessed.add(main.nodes.get(hh).nodeid);
-				main.gcsp_rownumber++;
-				main.gcsp_nodes.get(hh).incoverage_locx = this.locx;
-				main.gcsp_nodes.get(hh).incoverage_locy = this.locy;
-				main.gcsp_nodes.get(hh).pathnumber = pathnumber;
-				main.gcsp_nodes.get(hh).rownumber = main.gcsp_rownumber;
-				main.gcsp_nodes.get(hh).considered_emergcall.add(emergcallids.get(emergcallids.size()-1));	        
-			}
-	}]]></Action>
-						<Timeout Class="CodeUnitValue">
-							<Code><![CDATA[1]]></Code>
-							<Unit Class="TimeUnits"><![CDATA[SECOND]]></Unit>
-						</Timeout>
-						<Condition><![CDATA[//receving a call 
-emergcallids.size()>received_emerg_calls]]></Condition>
-						<Rate Class="CodeUnitValue">
-							<Code><![CDATA[1]]></Code>
-							<Unit Class="RateUnits"><![CDATA[PER_SECOND]]></Unit>
-						</Rate>
-						<MessageType><![CDATA[Object]]></MessageType>
-						<DefaultTransition>true</DefaultTransition>
-						<FilterType><![CDATA[unconditionally]]></FilterType>
-						<EqualsExpression><![CDATA["text"]]></EqualsExpression>
-						<SatisfiesExpression><![CDATA[true]]></SatisfiesExpression>
-					</Properties>	
-				</StatechartElement>
-				<StatechartElement Class="Transition" ParentState="ROOT_NODE">
-					<Id>1619206784968</Id>
-					<Name><![CDATA[transition1]]></Name>
-					<X>410</X><Y>100</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<Points>
-						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>80</X><Y>0</Y></Point>
-						<Point><X>80</X><Y>8</Y></Point>
-						<Point><X>80</X><Y>50</Y></Point>
-					</Points>
-					<IconOffset>20.0</IconOffset>
-					<Properties Source="1619176811971" Target="1619206777096" Trigger="timeout">
-						<Timeout Class="CodeUnitValue">
-							<Code><![CDATA[//some time before simulatione end
-main.timeInterval+200//to capture receieved but not recorded calls ]]></Code>
-							<Unit Class="TimeUnits"><![CDATA[SECOND]]></Unit>
-						</Timeout>
-						<Condition><![CDATA[time(SECOND) == 3900]]></Condition>
-						<Rate Class="CodeUnitValue">
-							<Code><![CDATA[1]]></Code>
-							<Unit Class="RateUnits"><![CDATA[PER_SECOND]]></Unit>
-						</Rate>
-						<MessageType><![CDATA[Object]]></MessageType>
-						<DefaultTransition>true</DefaultTransition>
-						<FilterType><![CDATA[unconditionally]]></FilterType>
-						<EqualsExpression><![CDATA["text"]]></EqualsExpression>
-						<SatisfiesExpression><![CDATA[true]]></SatisfiesExpression>
-					</Properties>	
-				</StatechartElement>
-				<StatechartElement Class="Transition" ParentState="ROOT_NODE">
-					<Id>1619206973970</Id>
-					<Name><![CDATA[transition2]]></Name>
-					<X>540</X><Y>180</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<Points>
-						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>-30</X><Y>50</Y></Point>
-						<Point><X>-40</X><Y>40</Y></Point>
-						<Point><X>-70</X><Y>0</Y></Point>
-					</Points>
-					<IconOffset>20.0</IconOffset>
-					<Properties Source="1619206777096" Target="1619206777096" Trigger="condition">
-						<Action><![CDATA[//f1]]></Action>
-						<Timeout Class="CodeUnitValue">
-							<Code><![CDATA[1]]></Code>
-							<Unit Class="TimeUnits"><![CDATA[SECOND]]></Unit>
-						</Timeout>
-						<Condition><![CDATA[//receving a call 
-//(emergcallids.size()-received_emerg_calls) ==1 &&
-emergcallids.size()>received_emerg_calls]]></Condition>
-						<Rate Class="CodeUnitValue">
-							<Code><![CDATA[1]]></Code>
-							<Unit Class="RateUnits"><![CDATA[PER_SECOND]]></Unit>
-						</Rate>
-						<MessageType><![CDATA[Object]]></MessageType>
-						<DefaultTransition>true</DefaultTransition>
-						<FilterType><![CDATA[unconditionally]]></FilterType>
-						<EqualsExpression><![CDATA["text"]]></EqualsExpression>
-						<SatisfiesExpression><![CDATA[true]]></SatisfiesExpression>
-					</Properties>	
-				</StatechartElement>
-			</StatechartElements>
-			<Functions>
-				<Function AccessType="default" StaticFunction="false">
-					<ReturnModificator>RETURNS_VALUE</ReturnModificator>
-					<ReturnType><![CDATA[double]]></ReturnType>
-					<Id>1619533972183</Id>
-					<Name><![CDATA[aoa_est_func]]></Name>
-					<X>610</X><Y>400</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Parameter>
-						<Name><![CDATA[txid]]></Name>
-						<Type><![CDATA[String]]></Type>
-					</Parameter>
-					<Body><![CDATA[//AoA of thid id(targetid/txid) with gNB
-double angle = atan2(main.gNBs.get(0).locy-main.phonelocy.get(txid),main.gNBs.get(0).locx-main.phonelocx.get(txid));
-	 
-//true/actual angle  measured wrt to east
-if(-3.14<=angle&&angle<-1.57)
- 	{
-		angle = 2*3.14+angle;	
-	}
-else if(-1.57<=angle && angle<0)
-	{
-		angle = 2*3.14+angle;
-	}
-angle_est = angle;
-return angle_est;]]></Body>
-				</Function>
-				<Function AccessType="default" StaticFunction="false">
-					<ReturnModificator>VOID</ReturnModificator>
-					<ReturnType><![CDATA[double]]></ReturnType>
-					<Id>1619943543995</Id>
-					<Name><![CDATA[relay_localization_gnb]]></Name>
-					<X>610</X><Y>280</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Parameter>
-						<Name><![CDATA[anchorid]]></Name>
-						<Type><![CDATA[String]]></Type>
-					</Parameter>
-					<Parameter>
-						<Name><![CDATA[targetid]]></Name>
-						<Type><![CDATA[String]]></Type>
-					</Parameter>
-					<Body><![CDATA[//true/actual RSSI assuming relays actual position is known
-double distanceFromEmerg = Math.pow(Math.pow(main.phonelocx.get(targetid)- main.phonelocx.get(anchorid),2) + Math. pow(main.phonelocy.get(targetid)-main.phonelocy.get(anchorid),2),0.5);
-String loc = String.valueOf(main.phonelocx.get(anchorid))+";"+String.valueOf(main.phonelocy.get(anchorid));	    
-					 	
-//add dist measures to specific node index
-//node still not available in nodes until it reach destination
-if(!main.nodeids_added.contains(targetid))
-	{   //anchorid (this id), dist measure
-	    main.add_nodes();
-	    main.add_gcsp_nodes();
-	    main.nodeids_added.add(targetid);
-	    main.nodes.get(main.nodes.size()-1).nodeid = targetid;
-	    main.gcsp_nodes.get(main.nodes.size()-1).nodeid = targetid;
-	    //System.out.println(" main.nodes.get(main.nodes.size()-1).nodeid : "+ main.nodes.get(main.nodes.size()-1).nodeid);
-	    //if(main.nodes.get(main.nodes.size()-1).nodeid==relayid)System.out.println("yes");
-	    int i = main.nodeids_added.indexOf(targetid);
-	    //anchor node location, distance from anchor node to target node 
-	    //target node = relayid
-	    main.nodes.get(i).rssi_estimation_updates.put(anchorid,rssi_est_func(distanceFromEmerg));
-	    main.gcsp_nodes.get(i).rssi_estimation_updates.put(anchorid,rssi_est_func(distanceFromEmerg));
-	   // main.nodes.get(i).rssi_dist_est.put(loc,rssi_dist_est_func(rssi_est_func(distanceFromEmerg)));
-		main.nodes.get(i).tof_estimation_updates.put(anchorid,tof_est_func(distanceFromEmerg));
-		main.gcsp_nodes.get(i).tof_estimation_updates.put(anchorid,tof_est_func(distanceFromEmerg));
-		//main.nodes.get(i).tof_dist_est.put(loc,tof_dist_est_func(tof_est_func(distanceFromEmerg)));
-		//System.out.println("1: "+main.nodeid_nbdist_measure.get(relayid)!=null);
-		if(main.nodeid_nbdist_measure.get(targetid)!=null)
-			{
-				main.nodeid_nbdist_measure.put(targetid,main.nodeid_nbdist_measure.get(targetid)+2);
-			}
-		else
-			{
-				main.nodeid_nbdist_measure.put(targetid,2);
-			}
-	}		
-else
-	{	//if node is registered already add dist measures to the node
-		//index in which relayid is in nodeids_added
-	    if(targetid.equals(main.nodes.get(main.nodeids_added.indexOf(targetid)).nodeid))
-	    	{
-    		    int i = main.nodeids_added.indexOf(targetid);
-    		//if(main.nodes.get(i).nodeid==relayid)
-			    //System.out.println("nice");
-				main.nodes.get(i).rssi_estimation_updates.put(anchorid,rssi_est_func(distanceFromEmerg));
-			    main.gcsp_nodes.get(i).rssi_estimation_updates.put(anchorid,rssi_est_func(distanceFromEmerg));
-			    //main.nodes.get(i).rssi_dist_est.put(loc,rssi_dist_est_func(rssi_est_func(distanceFromEmerg)));
-				main.nodes.get(i).tof_estimation_updates.put(anchorid,tof_est_func(distanceFromEmerg));
-				main.gcsp_nodes.get(i).tof_estimation_updates.put(anchorid,tof_est_func(distanceFromEmerg));
-				//main.nodes.get(i).tof_dist_est.put(loc,tof_dist_est_func(tof_est_func(distanceFromEmerg)));	
-				//System.out.println("2: "+main.nodeid_nbdist_measure.get(relayid)!=null);
-				if(main.nodeid_nbdist_measure.get(targetid)!=null)
-					{
-						main.nodeid_nbdist_measure.put(targetid,main.nodeid_nbdist_measure.get(targetid)+2);
-					}
-				else
-					{
-						main.nodeid_nbdist_measure.put(targetid,2);
-					}
-			}
-
-	}
-//nbdistmeasurements
-//include nodeid, dist measurements in node agent]]></Body>
-				</Function>
-				<Function AccessType="default" StaticFunction="false">
-					<ReturnModificator>RETURNS_VALUE</ReturnModificator>
-					<ReturnType><![CDATA[double]]></ReturnType>
-					<Id>1619944011679</Id>
-					<Name><![CDATA[rssi_est_func]]></Name>
-					<X>610</X><Y>310</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Parameter>
-						<Name><![CDATA[distanceFromEmerg]]></Name>
-						<Type><![CDATA[double]]></Type>
-					</Parameter>
-					<Body><![CDATA[//rssi measurement calculation				 	
-double pathloss_emerg_relay = 46.3+33.9*Math.log10(885)-13.82*Math.log10(1.5)-0.0152+(44.9-6.55*Math.log10(1.5))*Math.log10(distanceFromEmerg)+0;
-double rssidBm_emerg_relay = 20 - pathloss_emerg_relay;
-
-//rssi actual
-double rssidBm_watts_emerg_relay = Math.pow(10,(rssidBm_emerg_relay-30)/10);	
-//System.out.println("rssidBm_watts_emerg_relay : "+rssidBm_watts_emerg_relay);	
-
-rssi_est = rssidBm_watts_emerg_relay;	
-return rssi_est;]]></Body>
-				</Function>
-				<Function AccessType="default" StaticFunction="false">
-					<ReturnModificator>RETURNS_VALUE</ReturnModificator>
-					<ReturnType><![CDATA[double]]></ReturnType>
-					<Id>1619944011694</Id>
-					<Name><![CDATA[tof_est_func]]></Name>
-					<X>610</X><Y>340</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Parameter>
-						<Name><![CDATA[distanceFromEmerg]]></Name>
-						<Type><![CDATA[double]]></Type>
-					</Parameter>
-					<Body><![CDATA[//tof actual
-tof_act= distanceFromEmerg/(0.3/100*3*Math.pow(10,8))*10;
-//System.out.println("tof: "+tof);
-//tof measure confidence level 
-tof_est = tof_act+uniform(-main.tof_confidence,main.tof_confidence);
-//main.tof_with_blind.put(String.valueOf(this.id),buffer_relayid.get(j)+";"+String.valueOf(tof));
-return tof_est;]]></Body>
-				</Function>
-				<Function AccessType="default" StaticFunction="false">
-					<ReturnModificator>RETURNS_VALUE</ReturnModificator>
-					<ReturnType><![CDATA[double]]></ReturnType>
-					<Id>1619944011696</Id>
-					<Name><![CDATA[tof_dist_est_func]]></Name>
-					<X>610</X><Y>370</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Parameter>
-						<Name><![CDATA[tof_est]]></Name>
-						<Type><![CDATA[double]]></Type>
-					</Parameter>
-					<Body><![CDATA[double dist_est=tof_est*(0.3/100*3*Math.pow(10,8))*10;
-
-//main.tof_with_blind.put(String.valueOf(this.id),buffer_relayid.get(j)+";"+String.valueOf(tof));
-return dist_est;]]></Body>
-				</Function>
-				<Function AccessType="default" StaticFunction="false">
-					<ReturnModificator>VOID</ReturnModificator>
-					<ReturnType><![CDATA[double]]></ReturnType>
-					<Id>1621236285527</Id>
-					<Name><![CDATA[incov_measures]]></Name>
-					<X>610</X><Y>260</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Parameter>
-						<Name><![CDATA[t]]></Name>
-						<Type><![CDATA[int]]></Type>
-					</Parameter>
-					<Body><![CDATA[String[] nodestring = main.successfully_reached_ids.get(emergcallids.get(emergcallids.size()-1)).split(";");
-String[] node_time = nodestring[t].split(" ts:");
-String[] time_reached = nodestring[nodestring.length-2].split(" ts:");		
-main.add_nodes();
-main.add_gcsp_nodes();
-main.nodeids_added.add(node_time[0]);
-main.nodes.get(main.nodes.size()-1).nodeid = node_time[0];
-main.gcsp_nodes.get(main.nodes.size()-1).nodeid = node_time[0];
-
-int hh = main.nodeids_added.indexOf(node_time[0]);
-//adding aoa, rssi, tof measures
-main.nodes.get(hh).aoa_estimation_updates.put(node_time[0],aoa_est_func(node_time[0]));
-main.gcsp_nodes.get(hh).aoa_estimation_updates.put(node_time[0],aoa_est_func(node_time[0]));
-//add rssi between gnb and incoverage node 
-double distanceFromEmerg = Math.pow(Math.pow(main.phonelocx.get(node_time[0])- this.locx,2) + Math. pow(main.phonelocy.get(node_time[0])-this.locy,2),0.5);
-//anchorid is equal to target id
-String loc = String.valueOf(this.locx)+";"+String.valueOf(this.locy);	    				
-//System.out.println("00: "+node_time[0]+";"+loc);
-main.nodes.get(hh).rssi_estimation_updates.put("gNB",rssi_est_func(distanceFromEmerg));
-main.gcsp_nodes.get(hh).rssi_estimation_updates.put("gNB",rssi_est_func(distanceFromEmerg));
-//main.nodes.get(hh).rssi_dist_est.put(loc,rssi_dist_est_func(rssi_est_func(distanceFromEmerg)));
-main.nodes.get(hh).tof_estimation_updates.put("gNB",tof_est_func(distanceFromEmerg));
-main.gcsp_nodes.get(hh).tof_estimation_updates.put("gNB",tof_est_func(distanceFromEmerg));
-//main.nodes.get(hh).tof_dist_est.put(loc,tof_dist_est_func(tof_est_func(distanceFromEmerg)));
-
-// information collected by this target node at time of relaying are stored directly in the node agent with nodeid= targetid
-int jj = main.nodeids_added.indexOf(node_time[0]);
-
-main.nodes.get(jj).nodeid_time_rssinbmeasure.put(time_reached[1],1);
-main.gcsp_nodes.get(jj).nodeid_time_rssinbmeasure.put(time_reached[1],1);
-main.nodeid_time_rssinbmeasure.put(node_time[0]+";"+String.valueOf(success_emerg_calls.get(received_emerg_calls-1).hit_time),1);
-
-if(main.nodeid_nbdist_measure.get(node_time[0])!=null)
-	{
-		main.nodeid_nbdist_measure.put(node_time[0],main.nodeid_nbdist_measure.get(node_time[0])+2);
-	}
-else
-	{
-		main.nodeid_nbdist_measure.put(node_time[0],2);
-	}]]></Body>
-				</Function>
-				<Function AccessType="default" StaticFunction="false">
-					<ReturnModificator>VOID</ReturnModificator>
-					<ReturnType><![CDATA[double]]></ReturnType>
-					<Id>1621238981987</Id>
-					<Name><![CDATA[missed_node_localization]]></Name>
-					<X>610</X><Y>230</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Parameter>
-						<Name><![CDATA[i]]></Name>
-						<Type><![CDATA[int]]></Type>
-					</Parameter>
-					<Body><![CDATA[//add node device ids supported to carry the call
-String[] nodestring = main.successfully_reached_ids.get(emergcallids.get(emergcallids.size()-1)).split(";");
-String[] node_time = nodestring[i].split(" ts:");
-
-//access each node in order
-//add measures if a target node does not contain any measures to localize its position 
-String[] anchorid = nodestring[i+1].split(" ts:");		
-if(!main.nodeids_added.contains(node_time[0]))
-	{
-		if(main.phonelocx.get(node_time[0])!=null&&!anchorid[0].equals("done"))
-			{
-				relay_localization_gnb(anchorid[0],node_time[0]);
-				int jj = main.nodeids_added.indexOf(node_time[0]);
-				//time the anchor id takes the measures is anchorid[1]
-				main.nodes.get(jj).nodeid_time_rssinbmeasure.put(anchorid[1],1);	
-				main.gcsp_nodes.get(jj).nodeid_time_rssinbmeasure.put(anchorid[1],1);
-			}
-	}]]></Body>
-				</Function>
-				<Function AccessType="default" StaticFunction="false">
-					<ReturnModificator>VOID</ReturnModificator>
-					<ReturnType><![CDATA[double]]></ReturnType>
-					<Id>1623149322715</Id>
-					<Name><![CDATA[write_vishaka]]></Name>
-					<X>290</X><Y>-240</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Parameter>
-						<Name><![CDATA[rownumber]]></Name>
-						<Type><![CDATA[int]]></Type>
-					</Parameter>
-					<Parameter>
-						<Name><![CDATA[emergid]]></Name>
-						<Type><![CDATA[String]]></Type>
-					</Parameter>
-					<Parameter>
-						<Name><![CDATA[e_id]]></Name>
-						<Type><![CDATA[String]]></Type>
-					</Parameter>
-					<Parameter>
-						<Name><![CDATA[nodeid]]></Name>
-						<Type><![CDATA[String]]></Type>
-					</Parameter>
-					<Parameter>
-						<Name><![CDATA[xu]]></Name>
-						<Type><![CDATA[String]]></Type>
-					</Parameter>
-					<Parameter>
-						<Name><![CDATA[yu]]></Name>
-						<Type><![CDATA[String]]></Type>
-					</Parameter>
-					<Parameter>
-						<Name><![CDATA[bu]]></Name>
-						<Type><![CDATA[String]]></Type>
-					</Parameter>
-					<Parameter>
-						<Name><![CDATA[xr]]></Name>
-						<Type><![CDATA[String]]></Type>
-					</Parameter>
-					<Parameter>
-						<Name><![CDATA[yr]]></Name>
-						<Type><![CDATA[String]]></Type>
-					</Parameter>
-					<Parameter>
-						<Name><![CDATA[dist_est]]></Name>
-						<Type><![CDATA[String]]></Type>
-					</Parameter>
-					<Parameter>
-						<Name><![CDATA[aoa_est]]></Name>
-						<Type><![CDATA[String]]></Type>
-					</Parameter>
-					<Parameter>
-						<Name><![CDATA[GPS_radius]]></Name>
-						<Type><![CDATA[String]]></Type>
-					</Parameter>
-					<Parameter>
-						<Name><![CDATA[heading]]></Name>
-						<Type><![CDATA[String]]></Type>
-					</Parameter>
-					<Parameter>
-						<Name><![CDATA[time]]></Name>
-						<Type><![CDATA[String]]></Type>
-					</Parameter>
-					<Parameter>
-						<Name><![CDATA[nb_paths]]></Name>
-						<Type><![CDATA[String]]></Type>
-					</Parameter>
-					<Parameter>
-						<Name><![CDATA[pathid]]></Name>
-						<Type><![CDATA[String]]></Type>
-					</Parameter>
-					<Body><![CDATA[String a = String.format("Input!B%s", rownumber+1);
-String b = String.format("Input!C%s", rownumber+1);
-String c = String.format("Input!D%s", rownumber+1);
-String d = String.format("Input!E%s", rownumber+1);	
-String e = String.format("Input!F%s", rownumber+1);		
-String f= String.format("Input!G%s", rownumber+1);	
-String g = String.format("Input!H%s", rownumber+1);
-String h = String.format("Input!I%s", rownumber+1);
-String i = String.format("Input!J%s", rownumber+1);	
-String j = String.format("Input!K%s", rownumber+1);	
-String k = String.format("Input!L%s", rownumber+1);	
-String l = String.format("Input!M%s", rownumber+1);
-String m = String.format("Input!N%s", rownumber+1);
-String n = String.format("Input!O%s", rownumber+1);
-String o = String.format("Input!P%s", rownumber+1);
-main.excelFile.setFileName("csp.xlsx");
-
-//writing to excel
-main.excelFile.setCellValue( emergid, a);
-main.excelFile.setCellValue( e_id, b);
-main.excelFile.setCellValue( nodeid, c );
-main.excelFile.setCellValue( xu, d);
-main.excelFile.setCellValue( yu, e);
-main.excelFile.setCellValue( bu, f );
-main.excelFile.setCellValue( xr, g);
-main.excelFile.setCellValue( yr, h );
-main.excelFile.setCellValue( dist_est, i);
-main.excelFile.setCellValue( aoa_est, j );
-main.excelFile.setCellValue(GPS_radius, k );
-main.excelFile.setCellValue(heading, l );
-main.excelFile.setCellValue(time, m );
-main.excelFile.setCellValue(nb_paths, n);
-main.excelFile.setCellValue(pathid, o);
-main.excelFile.writeFile();]]></Body>
-				</Function>
-				<Function AccessType="default" StaticFunction="false">
-					<ReturnModificator>VOID</ReturnModificator>
-					<ReturnType><![CDATA[double]]></ReturnType>
-					<Id>1623833368618</Id>
-					<Name><![CDATA[write_gcsp]]></Name>
-					<X>490</X><Y>-240</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Parameter>
-						<Name><![CDATA[rownumber]]></Name>
-						<Type><![CDATA[int]]></Type>
-					</Parameter>
-					<Parameter>
-						<Name><![CDATA[emergid]]></Name>
-						<Type><![CDATA[String]]></Type>
-					</Parameter>
-					<Parameter>
-						<Name><![CDATA[e_id]]></Name>
-						<Type><![CDATA[String]]></Type>
-					</Parameter>
-					<Parameter>
-						<Name><![CDATA[nodeid]]></Name>
-						<Type><![CDATA[String]]></Type>
-					</Parameter>
-					<Parameter>
-						<Name><![CDATA[xu]]></Name>
-						<Type><![CDATA[String]]></Type>
-					</Parameter>
-					<Parameter>
-						<Name><![CDATA[yu]]></Name>
-						<Type><![CDATA[String]]></Type>
-					</Parameter>
-					<Parameter>
-						<Name><![CDATA[bu]]></Name>
-						<Type><![CDATA[String]]></Type>
-					</Parameter>
-					<Parameter>
-						<Name><![CDATA[xr]]></Name>
-						<Type><![CDATA[String]]></Type>
-					</Parameter>
-					<Parameter>
-						<Name><![CDATA[yr]]></Name>
-						<Type><![CDATA[String]]></Type>
-					</Parameter>
-					<Parameter>
-						<Name><![CDATA[dist_est]]></Name>
-						<Type><![CDATA[String]]></Type>
-					</Parameter>
-					<Parameter>
-						<Name><![CDATA[aoa_est]]></Name>
-						<Type><![CDATA[String]]></Type>
-					</Parameter>
-					<Parameter>
-						<Name><![CDATA[GPS_radius]]></Name>
-						<Type><![CDATA[String]]></Type>
-					</Parameter>
-					<Parameter>
-						<Name><![CDATA[heading]]></Name>
-						<Type><![CDATA[String]]></Type>
-					</Parameter>
-					<Parameter>
-						<Name><![CDATA[time]]></Name>
-						<Type><![CDATA[String]]></Type>
-					</Parameter>
-					<Parameter>
-						<Name><![CDATA[nb_paths]]></Name>
-						<Type><![CDATA[String]]></Type>
-					</Parameter>
-					<Parameter>
-						<Name><![CDATA[pathid]]></Name>
-						<Type><![CDATA[String]]></Type>
-					</Parameter>
-					<Body><![CDATA[String a = String.format("priority!B%s", rownumber+1);
-String b = String.format("priority!C%s", rownumber+1);
-String c = String.format("priority!D%s", rownumber+1);
-String d = String.format("priority!E%s", rownumber+1);	
-String e = String.format("priority!F%s", rownumber+1);		
-String f= String.format("priority!G%s", rownumber+1);	
-String g = String.format("priority!H%s", rownumber+1);
-String h = String.format("priority!I%s", rownumber+1);
-String i = String.format("priority!J%s", rownumber+1);	
-String j = String.format("priority!K%s", rownumber+1);	
-String k = String.format("priority!L%s", rownumber+1);	
-String l = String.format("priority!M%s", rownumber+1);
-String m = String.format("priority!N%s", rownumber+1);
-String n = String.format("priority!O%s", rownumber+1);
-String o = String.format("priority!P%s", rownumber+1);
-main.excelFile.setFileName("csp.xlsx");
-//writing to excel
-main.excelFile.setCellValue( emergid, a);
-main.excelFile.setCellValue( e_id, b );
-main.excelFile.setCellValue( nodeid, c );
-main.excelFile.setCellValue( xu, d);
-main.excelFile.setCellValue( yu, e);
-main.excelFile.setCellValue( bu, f );
-main.excelFile.setCellValue( xr, g);
-main.excelFile.setCellValue( yr, h );
-main.excelFile.setCellValue( dist_est, i);
-main.excelFile.setCellValue( aoa_est, j );
-main.excelFile.setCellValue(GPS_radius, k );
-main.excelFile.setCellValue(heading, l );
-main.excelFile.setCellValue(time, m );
-main.excelFile.setCellValue(nb_paths, n);
-main.excelFile.setCellValue(pathid, o);
-main.excelFile.writeFile();]]></Body>
-				</Function>
-				<Function AccessType="default" StaticFunction="false">
-					<ReturnModificator>VOID</ReturnModificator>
-					<ReturnType><![CDATA[double]]></ReturnType>
-					<Id>1629835441494</Id>
-					<Name><![CDATA[f1]]></Name>
-					<X>610</X><Y>200</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Body><![CDATA[//phone sends an emergency call succcesffully to the gNB
-received_emerg_calls++;
-//System.out.println("22: "+received_emerg_calls);
-//add another successful emergency call which is used to evaluate each success call
-//success call addition
-add_success_emerg_calls();
-
-//add attributes to each successful call
-success_emerg_calls.get(received_emerg_calls-1).emergcallid = emergcallids.get(emergcallids.size()-1); 
-success_emerg_calls.get(received_emerg_calls-1).hit_time = hit_time_array.get(hit_time_array.size()-1);
-
-//System.out.println("222: "+success_emerg_calls.get(received_emerg_calls-1).emergcallid );
-//add node device ids supported to carry the call
-String[] nodestring = main.successfully_reached_ids.get(emergcallids.get(emergcallids.size()-1)).split(";");
-incoming_node_array.clear();
-
-//last nodestring "done" is avoided by choosing the limit nodestring.length-1
-//add nodes which have not been added in phone agent
-for(int i=0;i<nodestring.length-1;i++)
-	{
-		String[] node_time = nodestring[i].split(" ts:");
-		
-		missed_node_localization(i);
-			
-		if(!main.nodeids_added.contains(node_time[0])&&main.incoverage_ids.contains(Integer.valueOf(node_time[0])))//localization of incoverage nodes 
-			{
-				incov_measures(i);//aoa estimate at the last relayid in main.successfully_reached_ids
-			}
-	}
-	
-incoming_node_array.clear();//clear priority_node_array
-if(main.v2_random_cost_based==true)//localization algo type 2	//v2 random cost based node consideration
-	{	
-		incoming_node_array.clear();
-		main.nbpaths++;
-		main.nbpath_nodestring.put(main.nbpaths,main.successfully_reached_ids.get(emergcallids.get(emergcallids.size()-1)));
-		for(int i=0;i<nodestring.length-1;i++)//array: in ascending order of each node's priority
-			{
-				String[] node_time = nodestring[i].split(" ts:");			
-						
-				int hg = main.nodeids_added.indexOf(node_time[0]);
-				
-				main.nodes.get(hg).nb_paths_contributed++;//increase the nb times the node contributes in the relaying by 1
-				main.gcsp_nodes.get(hg).nb_paths_contributed++;
-				double node_locarea =  main.id_GPS_accuracy.get(Integer.valueOf(node_time[0]));	//GPS is available choose the GPS accuracy
-				double distancefromnearestgNB = Math.pow(Math.pow(main.phonelocx.get(node_time[0])- main.gNBs.get(0).getX(),2) + Math.pow(main.phonelocy.get(node_time[0])-main.gNBs.get(0).getY(),2),0.5);
-							
-				//based on how many paths the node belongs to
-			    int most_contributing_node = main.nodes.get(hg).nb_paths_contributed;
-				
-			    //priority objective function
-			    double priority_node = 1*node_locarea + 1*1/distancefromnearestgNB + 1*most_contributing_node;//all parameters necessary to set the priority of the node
-			     
-			    //store all relay node in priority in order of magnitude, ascending order 
-			    if(!incoming_node_array.contains(String.valueOf(priority_node)+";"+node_time[0]))
-			    	{
-			    		incoming_node_array.add(String.valueOf(priority_node)+";"+node_time[0]);		    		
-			    	}
-			}
-		int pathnumber = emergcallids.size();//path id
-		
-		for(int u=0;u<incoming_node_array.size()-1; u++)//relative localizing in order of priority
-			{
-				String[] incoming_node = incoming_node_array.get(u).split(";");//select priority node first out of all the nodes in the successfully reach ids array
-				String min_area_id = incoming_node[1];
-				int gk = main.nodeids_added.indexOf(min_area_id);
-				send("activate node",main.nodes.get(gk));
-				//System.out.println("2222: "+main.nodes.get(gk).nodeid);	
-				main.rownumber++;
-				main.nodes.get(gk).pathnumber = pathnumber;
-				main.nodes.get(gk).rownumber = main.rownumber;
-				main.nodes.get(gk).considered_emergcall.add(emergcallids.get(emergcallids.size()-1));	    
-			}
-			
-		//System.out.println("00: "+incoming_node_array.size());
-		Collections.sort(incoming_node_array); 
-		//System.out.println("01: "+incoming_node_array.size());
-		for(int u=incoming_node_array.size()-1; u>=0; u--)//highest priority to lowest priority
-			{
-				String[] incoming_node = incoming_node_array.get(u).split(";");//select priority node first out of all the nodes in the successfully reach ids array
-				String min_area_id = incoming_node[1];
-				int hh = main.nodeids_added.indexOf(min_area_id);
-				send("activate node",main.gcsp_nodes.get(hh));
-				main.gcsp_rownumber++;
-				main.gcsp_nodes.get(hh).pathnumber = pathnumber;
-				main.gcsp_nodes.get(hh).rownumber = main.gcsp_rownumber;
-				main.gcsp_nodes.get(hh).considered_emergcall.add(emergcallids.get(emergcallids.size()-1));	        
-			}
-	}]]></Body>
-				</Function>
-			</Functions>
-			<AgentLinks>
-				<AgentLink>
-					<Id>1611405072608</Id>
-					<Name><![CDATA[connections]]></Name>
-					<X>50</X><Y>-50</Y>
-					<Label><X>15</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<OnReceive><![CDATA[received_msg="activate_gNB";]]></OnReceive>
-					<HandleReceiveInConnections>false</HandleReceiveInConnections>
-					<AgentLinkType>COLLECTION_OF_LINKS</AgentLinkType>
-					<AgentReferenceId>1611404965485</AgentReferenceId>
-					<AgentLinkBidirectional>true</AgentLinkBidirectional>
-					<MessageType><![CDATA[String]]></MessageType>
-					<StatechartReference>
-						<PackageName><![CDATA[am_help_with_buffer_tr]]></PackageName>
-						<ClassName><![CDATA[gNB]]></ClassName>
-						<ItemName><![CDATA[emergencyplatform]]></ItemName>
-					</StatechartReference>
-					<DrawLine>true</DrawLine>
-					<LineStyle>SOLID</LineStyle>
-					<LineWidth>1</LineWidth>
-					<LineColor>-16777216</LineColor>
-					<LineZOrder>ABOVE_AGENTS</LineZOrder>
-					<LineArrow>NONE</LineArrow>
-					<LineArrowPosition>END</LineArrowPosition>
-				</AgentLink>
-			</AgentLinks>
-
-			<ContainerLinks>
-				<ContainerLink>
-					<Id>1611405084532</Id>
-					<Name><![CDATA[main]]></Name>
-					<X>50</X><Y>-100</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<ActiveObjectClass>
-						<PackageName><![CDATA[am_help_with_buffer_tr]]></PackageName>
-						<ClassName><![CDATA[Main]]></ClassName>
-					</ActiveObjectClass>
-				</ContainerLink>
-			</ContainerLinks>
-			<EmbeddedObjects>
-				<EmbeddedObject>
-					<Id>1620196547362</Id>
-					<Name><![CDATA[rescue_teams]]></Name>
-					<X>490</X><Y>-60</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<PresentationId>1619178910738</PresentationId>
-					<ActiveObjectClass>
-						<PackageName><![CDATA[am_help_with_buffer_tr]]></PackageName>
-						<ClassName><![CDATA[rescue_team]]></ClassName>
-					</ActiveObjectClass>
-					<GenericParameterSubstitute>
-						<GenericParameterSubstituteReference>
-							<PackageName><![CDATA[am_help_with_buffer_tr]]></PackageName>
-							<ClassName><![CDATA[rescue_team]]></ClassName>
-							<ItemName><![CDATA[1619178910710]]></ItemName>
-						</GenericParameterSubstituteReference>
-					</GenericParameterSubstitute>
-					<Parameters>
-					</Parameters>
-					<ReplicationFlag>true</ReplicationFlag>
-					<Replication Class="CodeValue">
-						<Code><![CDATA[10]]></Code>
-					</Replication>
-					<CollectionType>ARRAY_LIST_BASED</CollectionType>
-					<InEnvironment>true</InEnvironment>	
-					<InitialSpeedCode Class="CodeUnitValue">
-						<Code><![CDATA[1]]></Code>
-						<Unit Class="SpeedUnits"><![CDATA[MPS]]></Unit>
-					</InitialSpeedCode>
-					<InitialLocationType>XYZ</InitialLocationType>
-					<XCode Class="CodeValue">
-						<Code><![CDATA[0]]></Code>
-					</XCode>
-					<YCode Class="CodeValue">
-						<Code><![CDATA[0]]></Code>
-					</YCode>
-					<ZCode Class="CodeValue">
-						<Code><![CDATA[0]]></Code>
-					</ZCode>
-					<ColumnCode Class="CodeValue">
-						<Code><![CDATA[0]]></Code>
-					</ColumnCode>
-					<RowCode Class="CodeValue">
-						<Code><![CDATA[0]]></Code>
-					</RowCode>
-					<LatitudeCode Class="CodeValue">
-						<Code><![CDATA[0]]></Code>
-					</LatitudeCode>
-					<LongitudeCode Class="CodeValue">
-						<Code><![CDATA[0]]></Code>
-					</LongitudeCode>
-					<LocationNameCode Class="CodeValue">
-						<Code><![CDATA[""]]></Code>
-					</LocationNameCode>
-					<InitializationType>SPECIFIED_NUMBER</InitializationType>
-					<InitializationDatabaseTableQuery>
-						<TableReference>
-						</TableReference>
-					</InitializationDatabaseTableQuery>
-					<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
-					<QuantityColumn>
-					</QuantityColumn>
-				</EmbeddedObject>
-				<EmbeddedObject>
-					<Id>1620196547365</Id>
-					<Name><![CDATA[success_emerg_calls]]></Name>
-					<X>280</X><Y>-60</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<ActiveObjectClass>
-						<PackageName><![CDATA[am_help_with_buffer_tr]]></PackageName>
-						<ClassName><![CDATA[success_emerg_call]]></ClassName>
-					</ActiveObjectClass>
-					<GenericParameterSubstitute>
-						<GenericParameterSubstituteReference>
-							<PackageName><![CDATA[am_help_with_buffer_tr]]></PackageName>
-							<ClassName><![CDATA[success_emerg_call]]></ClassName>
-							<ItemName><![CDATA[1619179093481]]></ItemName>
-						</GenericParameterSubstituteReference>
-					</GenericParameterSubstitute>
-					<Parameters>
-						<Parameter>
-							<Name><![CDATA[emergcallid]]></Name>
-						</Parameter>
-						<Parameter>
-							<Name><![CDATA[hit_time]]></Name>
-						</Parameter>
-					</Parameters>
-					<ReplicationFlag>true</ReplicationFlag>
-					<Replication Class="CodeValue">
-						<Code><![CDATA[100]]></Code>
-					</Replication>
-					<CollectionType>ARRAY_LIST_BASED</CollectionType>
-					<InEnvironment>true</InEnvironment>	
-					<InitialLocationType>AT_ANIMATION_POSITION</InitialLocationType>
-					<XCode Class="CodeValue">
-						<Code><![CDATA[0]]></Code>
-					</XCode>
-					<YCode Class="CodeValue">
-						<Code><![CDATA[0]]></Code>
-					</YCode>
-					<ZCode Class="CodeValue">
-						<Code><![CDATA[0]]></Code>
-					</ZCode>
-					<ColumnCode Class="CodeValue">
-						<Code><![CDATA[0]]></Code>
-					</ColumnCode>
-					<RowCode Class="CodeValue">
-						<Code><![CDATA[0]]></Code>
-					</RowCode>
-					<LatitudeCode Class="CodeValue">
-						<Code><![CDATA[0]]></Code>
-					</LatitudeCode>
-					<LongitudeCode Class="CodeValue">
-						<Code><![CDATA[0]]></Code>
-					</LongitudeCode>
-					<LocationNameCode Class="CodeValue">
-						<Code><![CDATA[""]]></Code>
-					</LocationNameCode>
-					<InitializationType>EMPTY</InitializationType>
-					<InitializationDatabaseTableQuery>
-						<TableReference>
-						</TableReference>
-					</InitializationDatabaseTableQuery>
-					<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
-					<QuantityColumn>
-					</QuantityColumn>
-				</EmbeddedObject>
-			</EmbeddedObjects>
-
-			<Presentation>
-				<Level>
-					<Id>1611405072612</Id>
-					<Name><![CDATA[level]]></Name>
-					<X>0</X><Y>0</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<Z>0</Z>
-					<LevelVisibility>DIM_NON_CURRENT</LevelVisibility>
-
-			<Presentation>
-				<Group>
-					<Id>1611405084506</Id>
-					<Name><![CDATA[factory]]></Name>
-					<X>0</X><Y>0</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<DrawMode>SHAPE_DRAW_2D</DrawMode>
-					<EmbeddedIcon>false</EmbeddedIcon>
-					<Z>0</Z>
-					<Rotation>0.0</Rotation>
-
-			<Presentation>
-				<Polyline>
-					<Id>1611405084508</Id>
-					<Name><![CDATA[_ps287]]></Name>
-					<X>0</X><Y>15</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<EmbeddedIcon>false</EmbeddedIcon>
-					<Z>0</Z>
-					<ZHeight>10</ZHeight>
-					<LineWidth>1</LineWidth>
-					<LineColor/>
-					<LineMaterial>null</LineMaterial>
-					<LineStyle>SOLID</LineStyle>
-					<BeginArrowSize>1</BeginArrowSize>
-					<BeginArrowStyle>0</BeginArrowStyle>
-					<EndArrowSize>1</EndArrowSize>
-					<EndArrowStyle>0</EndArrowStyle>
-					<FillColor>1342177280</FillColor>
-					<FillMaterial>null</FillMaterial>
-					<Points>
-					   <Point><X>0</X><Y>0</Y><Z>0</Z></Point>
-					   <Point><X>6</X><Y>-1</Y><Z>0</Z></Point>
-					   <Point><X>4</X><Y>-2</Y><Z>0</Z></Point>
-					   <Point><X>10</X><Y>-3</Y><Z>0</Z></Point>
-					   <Point><X>8</X><Y>-4</Y><Z>0</Z></Point>
-					   <Point><X>14</X><Y>-5</Y><Z>0</Z></Point>
-					   <Point><X>12</X><Y>-6</Y><Z>0</Z></Point>
-					   <Point><X>14</X><Y>-6</Y><Z>0</Z></Point>
-					   <Point><X>16</X><Y>-5</Y><Z>0</Z></Point>
-					   <Point><X>18</X><Y>-6</Y><Z>0</Z></Point>
-					   <Point><X>16</X><Y>-7</Y><Z>0</Z></Point>
-					   <Point><X>16</X><Y>-8</Y><Z>0</Z></Point>
-					   <Point><X>12</X><Y>-10</Y><Z>0</Z></Point>
-					   <Point><X>-4</X><Y>-2</Y><Z>0</Z></Point>
-					</Points>
-					<Closed>true</Closed>
-				</Polyline>
-				<Polyline>
-					<Id>1611405084510</Id>
-					<Name><![CDATA[_ps288]]></Name>
-					<X>-16</X><Y>7</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<EmbeddedIcon>false</EmbeddedIcon>
-					<Z>0</Z>
-					<ZHeight>10</ZHeight>
-					<LineWidth>1</LineWidth>
-					<LineColor/>
-					<LineMaterial>null</LineMaterial>
-					<LineStyle>SOLID</LineStyle>
-					<BeginArrowSize>1</BeginArrowSize>
-					<BeginArrowStyle>0</BeginArrowStyle>
-					<EndArrowSize>1</EndArrowSize>
-					<EndArrowStyle>0</EndArrowStyle>
-					<FillColor>-3065088</FillColor>
-					<FillMaterial>null</FillMaterial>
-					<Points>
-					   <Point><X>0</X><Y>0</Y><Z>0</Z></Point>
-					   <Point><X>0</X><Y>-6</Y><Z>0</Z></Point>
-					   <Point><X>12</X><Y>0</Y><Z>0</Z></Point>
-					   <Point><X>12</X><Y>6</Y><Z>0</Z></Point>
-					</Points>
-					<Closed>true</Closed>
-				</Polyline>
-				<Polyline>
-					<Id>1611405084512</Id>
-					<Name><![CDATA[_ps289]]></Name>
-					<X>12</X><Y>-1</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<EmbeddedIcon>false</EmbeddedIcon>
-					<Z>0</Z>
-					<ZHeight>10</ZHeight>
-					<LineWidth>1</LineWidth>
-					<LineColor/>
-					<LineMaterial>null</LineMaterial>
-					<LineStyle>SOLID</LineStyle>
-					<BeginArrowSize>1</BeginArrowSize>
-					<BeginArrowStyle>0</BeginArrowStyle>
-					<EndArrowSize>1</EndArrowSize>
-					<EndArrowStyle>0</EndArrowStyle>
-					<FillColor>-507904</FillColor>
-					<FillMaterial>null</FillMaterial>
-					<Points>
-					   <Point><X>0</X><Y>0</Y><Z>0</Z></Point>
-					   <Point><X>-4</X><Y>-2</Y><Z>0</Z></Point>
-					   <Point><X>-4</X><Y>2</Y><Z>0</Z></Point>
-					</Points>
-					<Closed>true</Closed>
-				</Polyline>
-				<Curve ControlPoints="true">
-					<Id>1611405084514</Id>
-					<Name><![CDATA[_ps290]]></Name>
-					<X>2</X><Y>-4</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<DrawMode>SHAPE_DRAW_2D</DrawMode>
-					<EmbeddedIcon>false</EmbeddedIcon>
-					<Z>0</Z>
-					<ZHeight>10</ZHeight>
-					<LineWidth>1</LineWidth>
-					<LineColor/>
-					<LineMaterial>null</LineMaterial>
-					<LineStyle>SOLID</LineStyle>
-					<BeginArrowSize>1</BeginArrowSize>
-					<BeginArrowStyle>0</BeginArrowStyle>
-					<EndArrowSize>1</EndArrowSize>
-					<EndArrowStyle>0</EndArrowStyle>
-					<FillColor>-4447488</FillColor>
-					<FillMaterial>null</FillMaterial>
-					<Points>
-					   <Point><X>0</X><Y>0</Y><Z>0</Z></Point>
-					   <Point><X>0</X><Y>2</Y><Z>0</Z></Point>
-					   <Point><X>-4</X><Y>2</Y><Z>0</Z></Point>
-					   <Point><X>-4</X><Y>0</Y><Z>0</Z></Point>
-					   <Point><X>-4</X><Y>0</Y><Z>0</Z></Point>
-					   <Point><X>-4</X><Y>-10</Y><Z>0</Z></Point>
-					   <Point><X>-4</X><Y>-11</Y><Z>0</Z></Point>
-					   <Point><X>-4</X><Y>-12</Y><Z>0</Z></Point>
-					   <Point><X>0</X><Y>-12</Y><Z>0</Z></Point>
-					   <Point><X>0</X><Y>-11</Y><Z>0</Z></Point>
-					   <Point><X>0</X><Y>-11</Y><Z>0</Z></Point>
-					   <Point><X>0</X><Y>0</Y><Z>0</Z></Point>
-					</Points>
-					<Closed>true</Closed>
-				</Curve>
-				<Curve ControlPoints="true">
-					<Id>1611405084516</Id>
-					<Name><![CDATA[_ps291]]></Name>
-					<X>8</X><Y>-1</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<DrawMode>SHAPE_DRAW_2D</DrawMode>
-					<EmbeddedIcon>false</EmbeddedIcon>
-					<Z>0</Z>
-					<ZHeight>10</ZHeight>
-					<LineWidth>1</LineWidth>
-					<LineColor/>
-					<LineMaterial>null</LineMaterial>
-					<LineStyle>SOLID</LineStyle>
-					<BeginArrowSize>1</BeginArrowSize>
-					<BeginArrowStyle>0</BeginArrowStyle>
-					<EndArrowSize>1</EndArrowSize>
-					<EndArrowStyle>0</EndArrowStyle>
-					<FillColor>-4447488</FillColor>
-					<FillMaterial>null</FillMaterial>
-					<Points>
-					   <Point><X>0</X><Y>0</Y><Z>0</Z></Point>
-					   <Point><X>0</X><Y>2</Y><Z>0</Z></Point>
-					   <Point><X>-4</X><Y>2</Y><Z>0</Z></Point>
-					   <Point><X>-4</X><Y>0</Y><Z>0</Z></Point>
-					   <Point><X>-4</X><Y>0</Y><Z>0</Z></Point>
-					   <Point><X>-4</X><Y>-10</Y><Z>0</Z></Point>
-					   <Point><X>-4</X><Y>-11</Y><Z>0</Z></Point>
-					   <Point><X>-4</X><Y>-12</Y><Z>0</Z></Point>
-					   <Point><X>0</X><Y>-12</Y><Z>0</Z></Point>
-					   <Point><X>0</X><Y>-11</Y><Z>0</Z></Point>
-					   <Point><X>0</X><Y>-11</Y><Z>0</Z></Point>
-					   <Point><X>0</X><Y>0</Y><Z>0</Z></Point>
-					</Points>
-					<Closed>true</Closed>
-				</Curve>
-				<Polyline>
-					<Id>1611405084518</Id>
-					<Name><![CDATA[_ps292]]></Name>
-					<X>-4</X><Y>7</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<EmbeddedIcon>false</EmbeddedIcon>
-					<Z>0</Z>
-					<ZHeight>10</ZHeight>
-					<LineWidth>1</LineWidth>
-					<LineColor/>
-					<LineMaterial>null</LineMaterial>
-					<LineStyle>SOLID</LineStyle>
-					<BeginArrowSize>1</BeginArrowSize>
-					<BeginArrowStyle>0</BeginArrowStyle>
-					<EndArrowSize>1</EndArrowSize>
-					<EndArrowStyle>0</EndArrowStyle>
-					<FillColor>-507904</FillColor>
-					<FillMaterial>null</FillMaterial>
-					<Points>
-					   <Point><X>0</X><Y>0</Y><Z>0</Z></Point>
-					   <Point><X>-12</X><Y>-6</Y><Z>0</Z></Point>
-					   <Point><X>-8</X><Y>-12</Y><Z>0</Z></Point>
-					   <Point><X>-6</X><Y>-11</Y><Z>0</Z></Point>
-					   <Point><X>-4</X><Y>-14</Y><Z>0</Z></Point>
-					   <Point><X>-2</X><Y>-13</Y><Z>0</Z></Point>
-					   <Point><X>0</X><Y>-16</Y><Z>0</Z></Point>
-					   <Point><X>12</X><Y>-10</Y><Z>0</Z></Point>
-					   <Point><X>12</X><Y>-6</Y><Z>0</Z></Point>
-					</Points>
-					<Closed>true</Closed>
-				</Polyline>
-				<Polyline>
-					<Id>1611405084520</Id>
-					<Name><![CDATA[_ps293]]></Name>
-					<X>-4</X><Y>13</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<EmbeddedIcon>false</EmbeddedIcon>
-					<Z>0</Z>
-					<ZHeight>10</ZHeight>
-					<LineWidth>1</LineWidth>
-					<LineColor/>
-					<LineMaterial>null</LineMaterial>
-					<LineStyle>SOLID</LineStyle>
-					<BeginArrowSize>1</BeginArrowSize>
-					<BeginArrowStyle>0</BeginArrowStyle>
-					<EndArrowSize>1</EndArrowSize>
-					<EndArrowStyle>0</EndArrowStyle>
-					<FillColor>-4447488</FillColor>
-					<FillMaterial>null</FillMaterial>
-					<Points>
-					   <Point><X>0</X><Y>0</Y><Z>0</Z></Point>
-					   <Point><X>16</X><Y>-8</Y><Z>0</Z></Point>
-					   <Point><X>16</X><Y>-14</Y><Z>0</Z></Point>
-					   <Point><X>12</X><Y>-12</Y><Z>0</Z></Point>
-					   <Point><X>12</X><Y>-16</Y><Z>0</Z></Point>
-					   <Point><X>8</X><Y>-10</Y><Z>0</Z></Point>
-					   <Point><X>8</X><Y>-14</Y><Z>0</Z></Point>
-					   <Point><X>4</X><Y>-8</Y><Z>0</Z></Point>
-					   <Point><X>4</X><Y>-12</Y><Z>0</Z></Point>
-					   <Point><X>0</X><Y>-6</Y><Z>0</Z></Point>
-					</Points>
-					<Closed>true</Closed>
-				</Polyline>
-				<Polyline>
-					<Id>1611405084522</Id>
-					<Name><![CDATA[_ps294]]></Name>
-					<X>0</X><Y>11</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<EmbeddedIcon>false</EmbeddedIcon>
-					<Z>0</Z>
-					<ZHeight>10</ZHeight>
-					<LineWidth>1</LineWidth>
-					<LineColor/>
-					<LineMaterial>null</LineMaterial>
-					<LineStyle>SOLID</LineStyle>
-					<BeginArrowSize>1</BeginArrowSize>
-					<BeginArrowStyle>0</BeginArrowStyle>
-					<EndArrowSize>1</EndArrowSize>
-					<EndArrowStyle>0</EndArrowStyle>
-					<FillColor>-9039360</FillColor>
-					<FillMaterial>null</FillMaterial>
-					<Points>
-					   <Point><X>0</X><Y>0</Y><Z>0</Z></Point>
-					   <Point><X>2</X><Y>-1</Y><Z>0</Z></Point>
-					   <Point><X>2</X><Y>-4</Y><Z>0</Z></Point>
-					   <Point><X>0</X><Y>-3</Y><Z>0</Z></Point>
-					</Points>
-					<Closed>true</Closed>
-				</Polyline>
-				<Polyline>
-					<Id>1611405084524</Id>
-					<Name><![CDATA[_ps295]]></Name>
-					<X>4</X><Y>9</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<EmbeddedIcon>false</EmbeddedIcon>
-					<Z>0</Z>
-					<ZHeight>10</ZHeight>
-					<LineWidth>1</LineWidth>
-					<LineColor/>
-					<LineMaterial>null</LineMaterial>
-					<LineStyle>SOLID</LineStyle>
-					<BeginArrowSize>1</BeginArrowSize>
-					<BeginArrowStyle>0</BeginArrowStyle>
-					<EndArrowSize>1</EndArrowSize>
-					<EndArrowStyle>0</EndArrowStyle>
-					<FillColor>-9039360</FillColor>
-					<FillMaterial>null</FillMaterial>
-					<Points>
-					   <Point><X>0</X><Y>0</Y><Z>0</Z></Point>
-					   <Point><X>2</X><Y>-1</Y><Z>0</Z></Point>
-					   <Point><X>2</X><Y>-4</Y><Z>0</Z></Point>
-					   <Point><X>0</X><Y>-3</Y><Z>0</Z></Point>
-					</Points>
-					<Closed>true</Closed>
-				</Polyline>
-				<Polyline>
-					<Id>1611405084526</Id>
-					<Name><![CDATA[_ps296]]></Name>
-					<X>8</X><Y>7</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<EmbeddedIcon>false</EmbeddedIcon>
-					<Z>0</Z>
-					<ZHeight>10</ZHeight>
-					<LineWidth>1</LineWidth>
-					<LineColor/>
-					<LineMaterial>null</LineMaterial>
-					<LineStyle>SOLID</LineStyle>
-					<BeginArrowSize>1</BeginArrowSize>
-					<BeginArrowStyle>0</BeginArrowStyle>
-					<EndArrowSize>1</EndArrowSize>
-					<EndArrowStyle>0</EndArrowStyle>
-					<FillColor>-9039360</FillColor>
-					<FillMaterial>null</FillMaterial>
-					<Points>
-					   <Point><X>0</X><Y>0</Y><Z>0</Z></Point>
-					   <Point><X>2</X><Y>-1</Y><Z>0</Z></Point>
-					   <Point><X>2</X><Y>-4</Y><Z>0</Z></Point>
-					   <Point><X>0</X><Y>-3</Y><Z>0</Z></Point>
-					</Points>
-					<Closed>true</Closed>
-				</Polyline>
-				<Curve ControlPoints="true">
-					<Id>1611405084528</Id>
-					<Name><![CDATA[_ps297]]></Name>
-					<X>12</X><Y>-1</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<DrawMode>SHAPE_DRAW_2D</DrawMode>
-					<EmbeddedIcon>false</EmbeddedIcon>
-					<Z>0</Z>
-					<ZHeight>10</ZHeight>
-					<LineWidth>1</LineWidth>
-					<LineColor>-12187648</LineColor>
-					<LineMaterial>null</LineMaterial>
-					<LineStyle>SOLID</LineStyle>
-					<BeginArrowSize>1</BeginArrowSize>
-					<BeginArrowStyle>0</BeginArrowStyle>
-					<EndArrowSize>1</EndArrowSize>
-					<EndArrowStyle>0</EndArrowStyle>
-					<FillColor/>
-					<FillMaterial>null</FillMaterial>
-					<Points>
-					   <Point><X>0</X><Y>0</Y><Z>0</Z></Point>
-					   <Point><X>0</X><Y>0</Y><Z>0</Z></Point>
-					   <Point><X>0</X><Y>6</Y><Z>0</Z></Point>
-					   <Point><X>0</X><Y>6</Y><Z>0</Z></Point>
-					   <Point><X>0</X><Y>6</Y><Z>0</Z></Point>
-					   <Point><X>-16</X><Y>14</Y><Z>0</Z></Point>
-					   <Point><X>-16</X><Y>14</Y><Z>0</Z></Point>
-					   <Point><X>-16</X><Y>14</Y><Z>0</Z></Point>
-					   <Point><X>-28</X><Y>8</Y><Z>0</Z></Point>
-					   <Point><X>-28</X><Y>8</Y><Z>0</Z></Point>
-					   <Point><X>-28</X><Y>8</Y><Z>0</Z></Point>
-					   <Point><X>-28</X><Y>2</Y><Z>0</Z></Point>
-					   <Point><X>-28</X><Y>2</Y><Z>0</Z></Point>
-					   <Point><X>-28</X><Y>2</Y><Z>0</Z></Point>
-					   <Point><X>-24</X><Y>-4</Y><Z>0</Z></Point>
-					   <Point><X>-24</X><Y>-4</Y><Z>0</Z></Point>
-					   <Point><X>-24</X><Y>-4</Y><Z>0</Z></Point>
-					   <Point><X>-22</X><Y>-3</Y><Z>0</Z></Point>
-					   <Point><X>-22</X><Y>-3</Y><Z>0</Z></Point>
-					   <Point><X>-22</X><Y>-3</Y><Z>0</Z></Point>
-					   <Point><X>-20</X><Y>-6</Y><Z>0</Z></Point>
-					   <Point><X>-20</X><Y>-6</Y><Z>0</Z></Point>
-					   <Point><X>-20</X><Y>-6</Y><Z>0</Z></Point>
-					   <Point><X>-18</X><Y>-5</Y><Z>0</Z></Point>
-					   <Point><X>-18</X><Y>-5</Y><Z>0</Z></Point>
-					   <Point><X>-18</X><Y>-5</Y><Z>0</Z></Point>
-					   <Point><X>-16</X><Y>-8</Y><Z>0</Z></Point>
-					   <Point><X>-16</X><Y>-8</Y><Z>0</Z></Point>
-					   <Point><X>-16</X><Y>-8</Y><Z>0</Z></Point>
-					   <Point><X>-14</X><Y>-7</Y><Z>0</Z></Point>
-					   <Point><X>-14</X><Y>-7</Y><Z>0</Z></Point>
-					   <Point><X>-14</X><Y>-7</Y><Z>0</Z></Point>
-					   <Point><X>-14</X><Y>-13</Y><Z>0</Z></Point>
-					   <Point><X>-14</X><Y>-14</Y><Z>0</Z></Point>
-					   <Point><X>-14</X><Y>-15</Y><Z>0</Z></Point>
-					   <Point><X>-10</X><Y>-15</Y><Z>0</Z></Point>
-					   <Point><X>-10</X><Y>-14</Y><Z>0</Z></Point>
-					   <Point><X>-10</X><Y>-13</Y><Z>0</Z></Point>
-					   <Point><X>-10</X><Y>-5</Y><Z>0</Z></Point>
-					   <Point><X>-10</X><Y>-5</Y><Z>0</Z></Point>
-					   <Point><X>-10</X><Y>-5</Y><Z>0</Z></Point>
-					   <Point><X>-8</X><Y>-4</Y><Z>0</Z></Point>
-					   <Point><X>-8</X><Y>-4</Y><Z>0</Z></Point>
-					   <Point><X>-8</X><Y>-4</Y><Z>0</Z></Point>
-					   <Point><X>-8</X><Y>-10</Y><Z>0</Z></Point>
-					   <Point><X>-8</X><Y>-11</Y><Z>0</Z></Point>
-					   <Point><X>-8</X><Y>-12</Y><Z>0</Z></Point>
-					   <Point><X>-4</X><Y>-12</Y><Z>0</Z></Point>
-					   <Point><X>-4</X><Y>-11</Y><Z>0</Z></Point>
-					   <Point><X>-4</X><Y>-10</Y><Z>0</Z></Point>
-					   <Point><X>-4</X><Y>-2</Y><Z>0</Z></Point>
-					   <Point><X>-4</X><Y>-2</Y><Z>0</Z></Point>
-					   <Point><X>-4</X><Y>-2</Y><Z>0</Z></Point>
-					   <Point><X>0</X><Y>0</Y><Z>0</Z></Point>
-					</Points>
-					<Closed>true</Closed>
-				</Curve>
-			</Presentation>
-
-				</Group>
-			</Presentation>
-
-				</Level>
-				<EmbeddedObjectPresentation>
-					<Id>1619178910738</Id>
-					<Name><![CDATA[rescue_teams_presentation]]></Name>
-					<X>630</X><Y>-90</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<EmbeddedIcon>false</EmbeddedIcon>
-					<Z>0</Z>
-					<Rotation>0.0</Rotation>
-					<DrawingMode>AGENT_CURRENT_POSITION</DrawingMode>
-					<ScaleType>AUTOMATICALLY_CALCULATED</ScaleType>
-					<GISScaleForRealEmbeddedObjectPresentationSize>1000</GISScaleForRealEmbeddedObjectPresentationSize>
-					<GISScaleForFixedEmbeddedObjectPresentationSize>1000000000</GISScaleForFixedEmbeddedObjectPresentationSize>
-					<Latitude>0.0</Latitude>
-					<Longitude>0.0</Longitude>
-				</EmbeddedObjectPresentation>
-			</Presentation>
-
-		</ActiveObjectClass>
-		<!--   =========   Active Object Class   ========  -->
-		<ActiveObjectClass>
 			<Id>1619178910712</Id>
 			<Name><![CDATA[rescue_team]]></Name>
 			<ClientAreaTopLeft><X>0</X><Y>0</Y></ClientAreaTopLeft>
@@ -7658,7 +5873,7 @@ if(main.v2_random_cost_based==true)//localization algo type 2	//v2 random cost b
 
 			<ContainerLinks>
 				<ContainerLink>
-					<Id>1619178910754</Id>
+					<Id>1630574625857</Id>
 					<Name><![CDATA[main]]></Name>
 					<X>50</X><Y>-100</Y>
 					<Label><X>10</X><Y>0</Y></Label>
@@ -7668,19 +5883,6 @@ if(main.v2_random_cost_based==true)//localization algo type 2	//v2 random cost b
 					<ActiveObjectClass>
 						<PackageName><![CDATA[am_help_with_buffer_tr]]></PackageName>
 						<ClassName><![CDATA[Main]]></ClassName>
-					</ActiveObjectClass>
-				</ContainerLink>
-				<ContainerLink>
-					<Id>1619178910756</Id>
-					<Name><![CDATA[gNB]]></Name>
-					<X>150</X><Y>-100</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<ActiveObjectClass>
-						<PackageName><![CDATA[am_help_with_buffer_tr]]></PackageName>
-						<ClassName><![CDATA[gNB]]></ClassName>
 					</ActiveObjectClass>
 				</ContainerLink>
 			</ContainerLinks>
@@ -8961,8 +7163,8 @@ return dist_est;]]></Body>
 					<OnReceive><![CDATA[received_msg_node ="activate_node";]]></OnReceive>
 					<HandleReceiveInConnections>false</HandleReceiveInConnections>
 					<AgentLinkType>COLLECTION_OF_LINKS</AgentLinkType>
-					<AgentReferenceId>1611405072613</AgentReferenceId>
-					<AgentLinkBidirectional>true</AgentLinkBidirectional>
+					<AgentReferenceId>1630581416898</AgentReferenceId>
+					<AgentLinkBidirectional>false</AgentLinkBidirectional>
 					<MessageType><![CDATA[String]]></MessageType>
 					<StatechartReference>
 						<PackageName><![CDATA[am_help_with_buffer_tr]]></PackageName>
@@ -9064,216 +7266,6 @@ return dist_est;]]></Body>
 					<FillMaterial>null</FillMaterial>
 				</Oval>
 			</Presentation>
-
-				</Level>
-			</Presentation>
-
-		</ActiveObjectClass>
-		<!--   =========   Active Object Class   ========  -->
-		<ActiveObjectClass>
-			<Id>1619179093483</Id>
-			<Name><![CDATA[success_emerg_call]]></Name>
-			<ClientAreaTopLeft><X>0</X><Y>0</Y></ClientAreaTopLeft>
-			<Generic>false</Generic>
-			<GenericParameter>
-				<Id>1619179093481</Id>
-				<Name><![CDATA[1619179093481]]></Name>
-				<GenericParameterValue Class="CodeValue">
-					<Code><![CDATA[T extends Agent]]></Code>
-				</GenericParameterValue>
-				<GenericParameterLabel><![CDATA[Generic parameter:]]></GenericParameterLabel>
-			</GenericParameter>
-			<FlowChartsUsage>ENTITY</FlowChartsUsage>
-			<SamplesToKeep>100</SamplesToKeep>
-			<LimitNumberOfArrayElements>false</LimitNumberOfArrayElements>
-			<ElementsLimitValue>100</ElementsLimitValue>
-			<MakeDefaultViewArea>true</MakeDefaultViewArea>
-			<SceneGridColor/>
-			<SceneBackgroundColor/>
-			<SceneSkybox>null</SceneSkybox>
-			<AgentProperties>
-	 			<SpaceType>CONTINUOUS</SpaceType>			
-				<EnvironmentDefinesInitialLocation>true</EnvironmentDefinesInitialLocation>
-				<RotateAnimationTowardsMovement>true</RotateAnimationTowardsMovement>
-				<RotateAnimationVertically>false</RotateAnimationVertically>
-				<VelocityCode Class="CodeUnitValue">
-					<Code><![CDATA[10]]></Code>
-					<Unit Class="SpeedUnits"><![CDATA[MPS]]></Unit>
-				</VelocityCode>
-				<PhysicalLength Class="CodeUnitValue">
-					<Code><![CDATA[1]]></Code>
-					<Unit Class="LengthUnits"><![CDATA[METER]]></Unit>
-				</PhysicalLength>
-				<PhysicalWidth Class="CodeUnitValue">
-					<Code><![CDATA[1]]></Code>
-					<Unit Class="LengthUnits"><![CDATA[METER]]></Unit>
-				</PhysicalWidth>
-				<PhysicalHeight Class="CodeUnitValue">
-					<Code><![CDATA[1]]></Code>
-					<Unit Class="LengthUnits"><![CDATA[METER]]></Unit>
-				</PhysicalHeight>
-			</AgentProperties>
-			<EnvironmentProperties>
-					<EnableSteps>false</EnableSteps>
-					<StepDurationCode Class="CodeUnitValue">
-						<Code><![CDATA[1.0]]></Code>
-						<Unit Class="TimeUnits"><![CDATA[SECOND]]></Unit>
-					</StepDurationCode>
-					<SpaceType>CONTINUOUS</SpaceType>
-					<WidthCode><![CDATA[500]]></WidthCode>
-					<HeightCode><![CDATA[500]]></HeightCode>
-					<ZHeightCode><![CDATA[0]]></ZHeightCode>
-					<ColumnsCountCode><![CDATA[100]]></ColumnsCountCode>
-					<RowsCountCode><![CDATA[100]]></RowsCountCode>
-					<NeigborhoodType>MOORE</NeigborhoodType>
-					<LayoutType>USER_DEF</LayoutType>
-					<LayoutTypeApplyOnStartup>true</LayoutTypeApplyOnStartup>
-					<NetworkType>USER_DEF</NetworkType>
-					<NetworkTypeApplyOnStartup>true</NetworkTypeApplyOnStartup>
-					<ConnectionsPerAgentCode><![CDATA[2]]></ConnectionsPerAgentCode>
-					<ConnectionsRangeCode><![CDATA[50]]></ConnectionsRangeCode>
-					<NeighborLinkFractionCode><![CDATA[0.95]]></NeighborLinkFractionCode>
-					<MCode><![CDATA[10]]></MCode>
-			</EnvironmentProperties>
-			<DatasetsCreationProperties>
-				<AutoCreate>true</AutoCreate>
-					<OccurrenceAtTime>true</OccurrenceAtTime>
-					<OccurrenceDate>1619251200000</OccurrenceDate>
-					<OccurrenceTime Class="CodeUnitValue">
-						<Code><![CDATA[0]]></Code>
-						<Unit Class="TimeUnits"><![CDATA[SECOND]]></Unit>
-					</OccurrenceTime>
-					<RecurrenceCode Class="CodeUnitValue">
-						<Code><![CDATA[1]]></Code>
-						<Unit Class="TimeUnits"><![CDATA[SECOND]]></Unit>
-					</RecurrenceCode>
-			</DatasetsCreationProperties>
-			<ScaleRuler>
-				<Id>1619179093479</Id>
-				<Name><![CDATA[scale]]></Name>
-				<X>0</X><Y>-150</Y>
-				<PublicFlag>false</PublicFlag>
-				<PresentationFlag>false</PresentationFlag>
-				<ShowLabel>false</ShowLabel>
-				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-				<Length>100</Length>
-				<Rotation>0</Rotation>
-				<ScaleType>BASED_ON_LENGTH</ScaleType>
-				<ModelLength>10</ModelLength>
-				<LengthUnits>METER</LengthUnits>
-				<Scale>10</Scale>
-				<InheritedFromParentAgentType>true</InheritedFromParentAgentType>
-			</ScaleRuler>
-			<CurrentLevel>1619179093482</CurrentLevel>
-			<ConnectionsId>1619179093478</ConnectionsId>
-			<Variables>
-				<Variable Class="Parameter">
-					<Id>1619179155979</Id>
-					<Name><![CDATA[emergcallid]]></Name>
-					<X>50</X><Y>40</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
-						<Type><![CDATA[String]]></Type>
-						<UnitType><![CDATA[NONE]]></UnitType>
-						<SdArray>false</SdArray>
-						<ParameterEditor>
-							<Id>1619179155977</Id>
-							<EditorContolType>TEXT_BOX</EditorContolType>
-							<MinSliderValue><![CDATA[0]]></MinSliderValue>
-							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
-							<DelimeterType>NO_DELIMETER</DelimeterType>
-						</ParameterEditor>
-					</Properties>                 
-				</Variable>
-				<Variable Class="Parameter">
-					<Id>1619179175583</Id>
-					<Name><![CDATA[hit_time]]></Name>
-					<X>50</X><Y>80</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
-						<Type><![CDATA[double]]></Type>
-						<UnitType><![CDATA[NONE]]></UnitType>
-						<SdArray>false</SdArray>
-						<ParameterEditor>
-							<Id>1619179175581</Id>
-							<EditorContolType>TEXT_BOX</EditorContolType>
-							<MinSliderValue><![CDATA[0]]></MinSliderValue>
-							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
-							<DelimeterType>NO_DELIMETER</DelimeterType>
-						</ParameterEditor>
-					</Properties>                 
-				</Variable>
-			</Variables>
-			<AgentLinks>
-				<AgentLink>
-					<Id>1619179093478</Id>
-					<Name><![CDATA[connections]]></Name>
-					<X>50</X><Y>-50</Y>
-					<Label><X>15</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<HandleReceiveInConnections>false</HandleReceiveInConnections>
-					<AgentLinkType>COLLECTION_OF_LINKS</AgentLinkType>
-					<AgentLinkBidirectional>true</AgentLinkBidirectional>
-					<MessageType><![CDATA[Object]]></MessageType>
-					<LineStyle>SOLID</LineStyle>
-					<LineWidth>1</LineWidth>
-					<LineColor>-16777216</LineColor>
-					<LineZOrder>UNDER_AGENTS</LineZOrder>
-					<LineArrow>NONE</LineArrow>
-					<LineArrowPosition>END</LineArrowPosition>
-				</AgentLink>
-			</AgentLinks>
-
-			<ContainerLinks>
-				<ContainerLink>
-					<Id>1619179093501</Id>
-					<Name><![CDATA[main]]></Name>
-					<X>50</X><Y>-100</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<ActiveObjectClass>
-						<PackageName><![CDATA[am_help_with_buffer_tr]]></PackageName>
-						<ClassName><![CDATA[Main]]></ClassName>
-					</ActiveObjectClass>
-				</ContainerLink>
-				<ContainerLink>
-					<Id>1619179093502</Id>
-					<Name><![CDATA[gNB]]></Name>
-					<X>150</X><Y>-100</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<ActiveObjectClass>
-						<PackageName><![CDATA[am_help_with_buffer_tr]]></PackageName>
-						<ClassName><![CDATA[gNB]]></ClassName>
-					</ActiveObjectClass>
-				</ContainerLink>
-			</ContainerLinks>
-
-			<Presentation>
-				<Level>
-					<Id>1619179093482</Id>
-					<Name><![CDATA[level]]></Name>
-					<X>0</X><Y>0</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<Z>0</Z>
-					<LevelVisibility>DIM_NON_CURRENT</LevelVisibility>
-
 
 				</Level>
 			</Presentation>
@@ -10298,8 +8290,8 @@ return dist_est;]]></Body>
 					<ShowLabel>true</ShowLabel>
 					<HandleReceiveInConnections>false</HandleReceiveInConnections>
 					<AgentLinkType>COLLECTION_OF_LINKS</AgentLinkType>
-					<AgentReferenceId>1611405072613</AgentReferenceId>
-					<AgentLinkBidirectional>true</AgentLinkBidirectional>
+					<AgentReferenceId>1630581416898</AgentReferenceId>
+					<AgentLinkBidirectional>false</AgentLinkBidirectional>
 					<MessageType><![CDATA[Object]]></MessageType>
 					<StatechartReference>
 						<PackageName><![CDATA[am_help_with_buffer_tr]]></PackageName>
@@ -10375,6 +8367,1897 @@ return dist_est;]]></Body>
 					<IgnoreSceneLights>false</IgnoreSceneLights>
 				</Figure3D>
 			</Presentation>
+
+				</Level>
+			</Presentation>
+
+		</ActiveObjectClass>
+		<!--   =========   Active Object Class   ========  -->
+		<ActiveObjectClass>
+			<Id>1630581416898</Id>
+			<Name><![CDATA[gNB]]></Name>
+			<ClientAreaTopLeft><X>0</X><Y>0</Y></ClientAreaTopLeft>
+			<Generic>false</Generic>
+			<GenericParameter>
+				<Id>1630581416896</Id>
+				<Name><![CDATA[1630581416896]]></Name>
+				<GenericParameterValue Class="CodeValue">
+					<Code><![CDATA[T extends Agent]]></Code>
+				</GenericParameterValue>
+				<GenericParameterLabel><![CDATA[Generic parameter:]]></GenericParameterLabel>
+			</GenericParameter>
+			<FlowChartsUsage>ENTITY</FlowChartsUsage>
+			<SamplesToKeep>100</SamplesToKeep>
+			<LimitNumberOfArrayElements>false</LimitNumberOfArrayElements>
+			<ElementsLimitValue>100</ElementsLimitValue>
+			<MakeDefaultViewArea>true</MakeDefaultViewArea>
+			<SceneGridColor/>
+			<SceneBackgroundColor/>
+			<SceneSkybox>null</SceneSkybox>
+			<AgentProperties>
+	 			<SpaceType>CONTINUOUS</SpaceType>			
+				<EnvironmentDefinesInitialLocation>true</EnvironmentDefinesInitialLocation>
+				<RotateAnimationTowardsMovement>true</RotateAnimationTowardsMovement>
+				<RotateAnimationVertically>false</RotateAnimationVertically>
+				<VelocityCode Class="CodeUnitValue">
+					<Code><![CDATA[10]]></Code>
+					<Unit Class="SpeedUnits"><![CDATA[MPS]]></Unit>
+				</VelocityCode>
+				<PhysicalLength Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="LengthUnits"><![CDATA[METER]]></Unit>
+				</PhysicalLength>
+				<PhysicalWidth Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="LengthUnits"><![CDATA[METER]]></Unit>
+				</PhysicalWidth>
+				<PhysicalHeight Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="LengthUnits"><![CDATA[METER]]></Unit>
+				</PhysicalHeight>
+			</AgentProperties>
+			<EnvironmentProperties>
+					<EnableSteps>false</EnableSteps>
+					<StepDurationCode Class="CodeUnitValue">
+						<Code><![CDATA[1.0]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[SECOND]]></Unit>
+					</StepDurationCode>
+					<SpaceType>CONTINUOUS</SpaceType>
+					<WidthCode><![CDATA[500]]></WidthCode>
+					<HeightCode><![CDATA[500]]></HeightCode>
+					<ZHeightCode><![CDATA[0]]></ZHeightCode>
+					<ColumnsCountCode><![CDATA[100]]></ColumnsCountCode>
+					<RowsCountCode><![CDATA[100]]></RowsCountCode>
+					<NeigborhoodType>MOORE</NeigborhoodType>
+					<LayoutType>USER_DEF</LayoutType>
+					<LayoutTypeApplyOnStartup>true</LayoutTypeApplyOnStartup>
+					<NetworkType>USER_DEF</NetworkType>
+					<NetworkTypeApplyOnStartup>true</NetworkTypeApplyOnStartup>
+					<ConnectionsPerAgentCode><![CDATA[2]]></ConnectionsPerAgentCode>
+					<ConnectionsRangeCode><![CDATA[50]]></ConnectionsRangeCode>
+					<NeighborLinkFractionCode><![CDATA[0.95]]></NeighborLinkFractionCode>
+					<MCode><![CDATA[10]]></MCode>
+			</EnvironmentProperties>
+			<DatasetsCreationProperties>
+				<AutoCreate>true</AutoCreate>
+					<OccurrenceAtTime>true</OccurrenceAtTime>
+					<OccurrenceDate>1630656000000</OccurrenceDate>
+					<OccurrenceTime Class="CodeUnitValue">
+						<Code><![CDATA[0]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[SECOND]]></Unit>
+					</OccurrenceTime>
+					<RecurrenceCode Class="CodeUnitValue">
+						<Code><![CDATA[1]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[SECOND]]></Unit>
+					</RecurrenceCode>
+			</DatasetsCreationProperties>
+			<ScaleRuler>
+				<Id>1630581416894</Id>
+				<Name><![CDATA[scale]]></Name>
+				<X>0</X><Y>-150</Y>
+				<PublicFlag>false</PublicFlag>
+				<PresentationFlag>false</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+				<Length>100</Length>
+				<Rotation>0</Rotation>
+				<ScaleType>BASED_ON_LENGTH</ScaleType>
+				<ModelLength>10</ModelLength>
+				<LengthUnits>METER</LengthUnits>
+				<Scale>10</Scale>
+				<InheritedFromParentAgentType>true</InheritedFromParentAgentType>
+			</ScaleRuler>
+			<CurrentLevel>1630581416897</CurrentLevel>
+			<ConnectionsId>1630581416893</ConnectionsId>
+			<Variables>
+				<Variable Class="PlainVariable">
+					<Id>1630581583218</Id>
+					<Name><![CDATA[iter_relay]]></Name>
+					<X>120</X><Y>420</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[double]]></Type>        
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1630581583220</Id>
+					<Name><![CDATA[flag]]></Name>
+					<X>120</X><Y>390</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[boolean]]></Type>        
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1630581583222</Id>
+					<Name><![CDATA[angle_est]]></Name>
+					<X>120</X><Y>450</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[double]]></Type>        
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1630581583224</Id>
+					<Name><![CDATA[received_msg]]></Name>
+					<X>120</X><Y>480</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[String]]></Type>        
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1630581583226</Id>
+					<Name><![CDATA[rssi_est]]></Name>
+					<X>590</X><Y>350</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[double]]></Type>        
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1630581583228</Id>
+					<Name><![CDATA[tof_act]]></Name>
+					<X>590</X><Y>380</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[double]]></Type>        
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1630581583230</Id>
+					<Name><![CDATA[tof_est]]></Name>
+					<X>590</X><Y>410</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[double]]></Type>        
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1630581583232</Id>
+					<Name><![CDATA[iter]]></Name>
+					<X>590</X><Y>440</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[double]]></Type>        
+					</Properties>
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1630581416899</Id>
+					<Name><![CDATA[locx]]></Name>
+					<X>50</X><Y>50</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[double]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<ParameterEditor>
+							<Id>0</Id>
+							<EditorContolType>TEXT_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1630581416900</Id>
+					<Name><![CDATA[locy]]></Name>
+					<X>50</X><Y>100</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[double]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<ParameterEditor>
+							<Id>0</Id>
+							<EditorContolType>TEXT_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1630581583241</Id>
+					<Name><![CDATA[received_emerg_calls]]></Name>
+					<X>120</X><Y>130</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[int]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<ParameterEditor>
+							<Id>1630581583239</Id>
+							<EditorContolType>TEXT_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1630581583244</Id>
+					<Name><![CDATA[aoa_confidence]]></Name>
+					<X>120</X><Y>160</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>false</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[double]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[0.5]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1630581583242</Id>
+							<EditorContolType>TEXT_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1630581605810</Id>
+					<Name><![CDATA[ind]]></Name>
+					<X>120</X><Y>30</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[int]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<ParameterEditor>
+							<Id>1630581605808</Id>
+							<EditorContolType>TEXT_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="CollectionVariable">
+					<Id>1630581583184</Id>
+					<Name><![CDATA[emergcallids]]></Name>
+					<X>120</X><Y>310</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" AccessType="public" StaticVariable="false">
+						<CollectionClass><![CDATA[ArrayList]]></CollectionClass>
+						<ElementClass><![CDATA[String]]></ElementClass>
+						<ValueElementClass><![CDATA[String]]></ValueElementClass>
+					</Properties>
+
+				</Variable>
+				<Variable Class="CollectionVariable">
+					<Id>1630581583186</Id>
+					<Name><![CDATA[hit_time_array]]></Name>
+					<X>120</X><Y>280</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" AccessType="public" StaticVariable="false">
+						<CollectionClass><![CDATA[ArrayList]]></CollectionClass>
+						<ElementClass><![CDATA[Double]]></ElementClass>
+						<ValueElementClass><![CDATA[String]]></ValueElementClass>
+					</Properties>
+
+				</Variable>
+				<Variable Class="CollectionVariable">
+					<Id>1630581583188</Id>
+					<Name><![CDATA[relayids_added]]></Name>
+					<X>120</X><Y>250</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" AccessType="public" StaticVariable="false">
+						<CollectionClass><![CDATA[ArrayList]]></CollectionClass>
+						<ElementClass><![CDATA[String]]></ElementClass>
+						<ValueElementClass><![CDATA[String]]></ValueElementClass>
+					</Properties>
+
+				</Variable>
+				<Variable Class="CollectionVariable">
+					<Id>1630581583190</Id>
+					<Name><![CDATA[checkedids]]></Name>
+					<X>120</X><Y>340</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" AccessType="public" StaticVariable="false">
+						<CollectionClass><![CDATA[ArrayList]]></CollectionClass>
+						<ElementClass><![CDATA[String]]></ElementClass>
+						<ValueElementClass><![CDATA[String]]></ValueElementClass>
+					</Properties>
+
+				</Variable>
+				<Variable Class="CollectionVariable">
+					<Id>1630581583192</Id>
+					<Name><![CDATA[confidence_area]]></Name>
+					<X>120</X><Y>220</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" AccessType="public" StaticVariable="false">
+						<CollectionClass><![CDATA[LinkedHashMap]]></CollectionClass>
+						<ElementClass><![CDATA[String]]></ElementClass>
+						<ValueElementClass><![CDATA[Double]]></ValueElementClass>
+					</Properties>
+
+				</Variable>
+				<Variable Class="CollectionVariable">
+					<Id>1630581583194</Id>
+					<Name><![CDATA[loc_area_array]]></Name>
+					<X>120</X><Y>540</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" AccessType="public" StaticVariable="false">
+						<CollectionClass><![CDATA[ArrayList]]></CollectionClass>
+						<ElementClass><![CDATA[String]]></ElementClass>
+						<ValueElementClass><![CDATA[String]]></ValueElementClass>
+					</Properties>
+
+				</Variable>
+				<Variable Class="CollectionVariable">
+					<Id>1630581583196</Id>
+					<Name><![CDATA[incoming_node_array]]></Name>
+					<X>120</X><Y>570</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" AccessType="public" StaticVariable="false">
+						<CollectionClass><![CDATA[ArrayList]]></CollectionClass>
+						<ElementClass><![CDATA[String]]></ElementClass>
+						<ValueElementClass><![CDATA[String]]></ValueElementClass>
+					</Properties>
+
+				</Variable>
+			</Variables>
+			<StatechartElements>
+				<StatechartElement Class="State" ParentState="ROOT_NODE">
+					<Id>1630581583246</Id>
+					<Name><![CDATA[received_emerg_call_storage]]></Name>
+					<X>380</X><Y>120</Y>
+					<Label><X>10</X><Y>10</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties Width="100" Height="30">
+						<EntryAction><![CDATA[//rescue_teams.get(available_truckid).moveTo(100,500);]]></EntryAction>
+						<FillColor/>
+					</Properties>
+				</StatechartElement>
+				<StatechartElement Class="State" ParentState="ROOT_NODE">
+					<Id>1630581583248</Id>
+					<Name><![CDATA[state]]></Name>
+					<X>520</X><Y>190</Y>
+					<Label><X>10</X><Y>10</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties Width="100" Height="30">
+						<EntryAction><![CDATA[int iter = 2;//starting data row  in excel
+
+for(int i=0;i<main.nbpaths_time.size();i++)
+	{	
+		String r = main.nbpaths_time.get(i);
+		String[] rsplit = r.split(" ");
+		
+		if(!rsplit[9].equals("6.28"))
+			{
+				//System.out.println("r: "+r);
+			}
+		write_vishaka(iter,rsplit[1],rsplit[2],rsplit[3],rsplit[4],rsplit[5],rsplit[6],rsplit[7],rsplit[8],rsplit[9],rsplit[10],rsplit[11],rsplit[12],rsplit[13],rsplit[14],rsplit[15]);
+		iter++;
+	}
+iter=2;
+for(int i=0;i<main.gnbpaths_time.size();i++)
+	{	
+		String gr = main.gnbpaths_time.get(i);
+		
+		String[] grsplit = gr.split(" ");
+		if(!grsplit[9].equals("6.28"))
+			{
+				//System.out.println("gr: "+gr);
+			}
+		write_gcsp(iter,grsplit[1],grsplit[2],grsplit[3],grsplit[4],grsplit[5],grsplit[6],grsplit[7],grsplit[8],grsplit[9],grsplit[10],grsplit[11],grsplit[12],grsplit[13],grsplit[14],grsplit[15]);
+		iter++;
+	}]]></EntryAction>
+						<FillColor/>
+					</Properties>
+				</StatechartElement>
+				<StatechartElement Class="EntryPoint" ParentState="ROOT_NODE">
+					<Id>1630581583250</Id>
+					<Name><![CDATA[emergencyplatform]]></Name>
+					<X>420</X><Y>80</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Points>
+						<Point><X>0</X><Y>0</Y></Point>
+						<Point><X>0</X><Y>40</Y></Point>
+					</Points>
+					<Properties Target="1630581583246">
+					</Properties>	
+				</StatechartElement>
+				<StatechartElement Class="Transition" ParentState="ROOT_NODE">
+					<Id>1630581583252</Id>
+					<Name><![CDATA[transition]]></Name>
+					<X>460</X><Y>150</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Points>
+						<Point><X>0</X><Y>0</Y></Point>
+						<Point><X>-20</X><Y>30</Y></Point>
+						<Point><X>-30</X><Y>50</Y></Point>
+						<Point><X>-48</X><Y>28</Y></Point>
+						<Point><X>-70</X><Y>0</Y></Point>
+					</Points>
+					<IconOffset>20.0</IconOffset>
+					<Properties Source="1630581583246" Target="1630581583246" Trigger="condition">
+						<Action><![CDATA[//phone sends an emergency call succcesffully to the gNB
+received_emerg_calls++;
+//System.out.println("00: "+received_emerg_calls);
+//add another successful emergency call which is used to evaluate each success call
+//success call addition
+add_success_emerg_calls();
+
+//add attributes to each successful call
+success_emerg_calls.get(received_emerg_calls-1).emergcallid = emergcallids.get(emergcallids.size()-1); 
+success_emerg_calls.get(received_emerg_calls-1).hit_time = hit_time_array.get(hit_time_array.size()-1);
+
+//System.out.println("000: "+success_emerg_calls.get(received_emerg_calls-1).emergcallid );
+//add node device ids supported to carry the call
+String[] nodestring = main.successfully_reached_ids.get(emergcallids.get(emergcallids.size()-1)).split(";");
+incoming_node_array.clear();
+
+//last nodestring "done" is avoided by choosing the limit nodestring.length-1
+//add nodes which have not been added in phone agent
+for(int i=0;i<nodestring.length-1;i++)
+	{
+		String[] node_time = nodestring[i].split(" ts:");
+		
+		missed_node_localization(i);
+			
+		if(!main.nodeids_added.contains(node_time[0])&&main.incoverage_ids.contains(Integer.valueOf(node_time[0])))//localization of incoverage nodes 
+			{
+				incov_measures(i);//aoa estimate at the last relayid in main.successfully_reached_ids
+			}
+	}
+	
+incoming_node_array.clear();//clear priority_node_array
+if(main.v2_random_cost_based==true)//localization algo type 2	//v2 random cost based node consideration
+	{	
+		incoming_node_array.clear();
+		main.nbpaths++;
+		main.nbpath_nodestring.put(main.nbpaths,main.successfully_reached_ids.get(emergcallids.get(emergcallids.size()-1)));
+		for(int i=0;i<nodestring.length-1;i++)//array: in ascending order of each node's priority
+			{
+				String[] node_time = nodestring[i].split(" ts:");			
+				//System.out.println("001: "+node_time[0] );		
+				int hg = main.nodeids_added.indexOf(node_time[0]);
+				
+				main.nodes.get(hg).nb_paths_contributed++;//increase the nb times the node contributes in the relaying by 1
+				main.gcsp_nodes.get(hg).nb_paths_contributed++;
+				double node_locarea =  main.id_GPS_accuracy.get(Integer.valueOf(node_time[0]));	//GPS is available choose the GPS accuracy
+				double distancefromnearestgNB = Math.pow(Math.pow(main.phonelocx.get(node_time[0])- this.locx,2) + Math.pow(main.phonelocy.get(node_time[0])-this.locy,2),0.5);
+							
+				//based on how many paths the node belongs to
+			    int most_contributing_node = main.nodes.get(hg).nb_paths_contributed;
+				
+			    //priority objective function
+			    double priority_node = 1*node_locarea + 1*1/distancefromnearestgNB + 1*most_contributing_node;//all parameters necessary to set the priority of the node
+			     
+			    //store all relay node in priority in order of magnitude, ascending order 
+			    if(!incoming_node_array.contains(String.valueOf(priority_node)+";"+node_time[0]))
+			    	{
+			    		incoming_node_array.add(String.valueOf(priority_node)+";"+node_time[0]);		    		
+			    	}
+			}
+		int pathnumber = emergcallids.size();//path id
+		
+		for(int u=0;u<incoming_node_array.size(); u++)//relative localizing in order of priority
+			{
+				String[] incoming_node = incoming_node_array.get(u).split(";");//select priority node first out of all the nodes in the successfully reach ids array
+				String min_area_id = incoming_node[1];
+				int gk = main.nodeids_added.indexOf(min_area_id);
+				send("activate node",main.nodes.get(gk));
+				//System.out.println("0001: "+main.nodes.get(gk).nodeid);	
+				main.nodes_accessed.add(main.nodes.get(gk).nodeid);
+				main.rownumber++;
+				main.nodes.get(gk).incoverage_locx = this.locx;
+				main.nodes.get(gk).incoverage_locy = this.locy;
+				System.out.println("locx: "+this.locx);	
+				main.nodes.get(gk).pathnumber = pathnumber;
+				main.nodes.get(gk).rownumber = main.rownumber;
+				main.nodes.get(gk).considered_emergcall.add(emergcallids.get(emergcallids.size()-1));	    
+			}
+			
+		//System.out.println("00: "+incoming_node_array.size());
+		Collections.sort(incoming_node_array); 
+		//System.out.println("01: "+incoming_node_array.size());
+		for(int u=incoming_node_array.size()-1; u>=0; u--)//highest priority to lowest priority
+			{
+				String[] incoming_nodeg = incoming_node_array.get(u).split(";");//select priority node first out of all the nodes in the successfully reach ids array
+				String area_id = incoming_nodeg[1];
+				int hh = main.nodeids_added.indexOf(area_id);
+				send("activate node",main.gcsp_nodes.get(hh));
+				main.gnodes_accessed.add(main.nodes.get(hh).nodeid);
+				main.gcsp_rownumber++;
+				main.gcsp_nodes.get(hh).incoverage_locx = this.locx;
+				main.gcsp_nodes.get(hh).incoverage_locy = this.locy;
+				main.gcsp_nodes.get(hh).pathnumber = pathnumber;
+				main.gcsp_nodes.get(hh).rownumber = main.gcsp_rownumber;
+				main.gcsp_nodes.get(hh).considered_emergcall.add(emergcallids.get(emergcallids.size()-1));	        
+			}
+	}]]></Action>
+						<Timeout Class="CodeUnitValue">
+							<Code><![CDATA[1]]></Code>
+							<Unit Class="TimeUnits"><![CDATA[SECOND]]></Unit>
+						</Timeout>
+						<Condition><![CDATA[//receving a call 
+emergcallids.size()>received_emerg_calls]]></Condition>
+						<Rate Class="CodeUnitValue">
+							<Code><![CDATA[1]]></Code>
+							<Unit Class="RateUnits"><![CDATA[PER_SECOND]]></Unit>
+						</Rate>
+						<MessageType><![CDATA[Object]]></MessageType>
+						<DefaultTransition>true</DefaultTransition>
+						<FilterType><![CDATA[unconditionally]]></FilterType>
+						<EqualsExpression><![CDATA["text"]]></EqualsExpression>
+						<SatisfiesExpression><![CDATA[true]]></SatisfiesExpression>
+					</Properties>	
+				</StatechartElement>
+				<StatechartElement Class="Transition" ParentState="ROOT_NODE">
+					<Id>1630581583254</Id>
+					<Name><![CDATA[transition1]]></Name>
+					<X>480</X><Y>140</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Points>
+						<Point><X>0</X><Y>0</Y></Point>
+						<Point><X>80</X><Y>0</Y></Point>
+						<Point><X>80</X><Y>8</Y></Point>
+						<Point><X>80</X><Y>50</Y></Point>
+					</Points>
+					<IconOffset>20.0</IconOffset>
+					<Properties Source="1630581583246" Target="1630581583248" Trigger="timeout">
+						<Timeout Class="CodeUnitValue">
+							<Code><![CDATA[//some time before simulatione end
+main.timeInterval+200//to capture receieved but not recorded calls ]]></Code>
+							<Unit Class="TimeUnits"><![CDATA[SECOND]]></Unit>
+						</Timeout>
+						<Condition><![CDATA[time(SECOND) == 3900]]></Condition>
+						<Rate Class="CodeUnitValue">
+							<Code><![CDATA[1]]></Code>
+							<Unit Class="RateUnits"><![CDATA[PER_SECOND]]></Unit>
+						</Rate>
+						<MessageType><![CDATA[Object]]></MessageType>
+						<DefaultTransition>true</DefaultTransition>
+						<FilterType><![CDATA[unconditionally]]></FilterType>
+						<EqualsExpression><![CDATA["text"]]></EqualsExpression>
+						<SatisfiesExpression><![CDATA[true]]></SatisfiesExpression>
+					</Properties>	
+				</StatechartElement>
+				<StatechartElement Class="Transition" ParentState="ROOT_NODE">
+					<Id>1630581583256</Id>
+					<Name><![CDATA[transition2]]></Name>
+					<X>610</X><Y>220</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Points>
+						<Point><X>0</X><Y>0</Y></Point>
+						<Point><X>-30</X><Y>50</Y></Point>
+						<Point><X>-40</X><Y>40</Y></Point>
+						<Point><X>-70</X><Y>0</Y></Point>
+					</Points>
+					<IconOffset>20.0</IconOffset>
+					<Properties Source="1630581583248" Target="1630581583248" Trigger="condition">
+						<Action><![CDATA[//f1]]></Action>
+						<Timeout Class="CodeUnitValue">
+							<Code><![CDATA[1]]></Code>
+							<Unit Class="TimeUnits"><![CDATA[SECOND]]></Unit>
+						</Timeout>
+						<Condition><![CDATA[//receving a call 
+//(emergcallids.size()-received_emerg_calls) ==1 &&
+emergcallids.size()>received_emerg_calls]]></Condition>
+						<Rate Class="CodeUnitValue">
+							<Code><![CDATA[1]]></Code>
+							<Unit Class="RateUnits"><![CDATA[PER_SECOND]]></Unit>
+						</Rate>
+						<MessageType><![CDATA[Object]]></MessageType>
+						<DefaultTransition>true</DefaultTransition>
+						<FilterType><![CDATA[unconditionally]]></FilterType>
+						<EqualsExpression><![CDATA["text"]]></EqualsExpression>
+						<SatisfiesExpression><![CDATA[true]]></SatisfiesExpression>
+					</Properties>	
+				</StatechartElement>
+			</StatechartElements>
+			<Functions>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>RETURNS_VALUE</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1630581583198</Id>
+					<Name><![CDATA[aoa_est_func]]></Name>
+					<X>680</X><Y>440</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Parameter>
+						<Name><![CDATA[txid]]></Name>
+						<Type><![CDATA[String]]></Type>
+					</Parameter>
+					<Body><![CDATA[//AoA of thid id(targetid/txid) with gNB
+double angle = atan2(main.gNBs.get(0).locy-main.phonelocy.get(txid),main.gNBs.get(0).locx-main.phonelocx.get(txid));
+	 
+//true/actual angle  measured wrt to east
+if(-3.14<=angle&&angle<-1.57)
+ 	{
+		angle = 2*3.14+angle;	
+	}
+else if(-1.57<=angle && angle<0)
+	{
+		angle = 2*3.14+angle;
+	}
+angle_est = angle;
+return angle_est;]]></Body>
+				</Function>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>VOID</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1630581583200</Id>
+					<Name><![CDATA[relay_localization_gnb]]></Name>
+					<X>680</X><Y>320</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Parameter>
+						<Name><![CDATA[anchorid]]></Name>
+						<Type><![CDATA[String]]></Type>
+					</Parameter>
+					<Parameter>
+						<Name><![CDATA[targetid]]></Name>
+						<Type><![CDATA[String]]></Type>
+					</Parameter>
+					<Body><![CDATA[//true/actual RSSI assuming relays actual position is known
+double distanceFromEmerg = Math.pow(Math.pow(main.phonelocx.get(targetid)- main.phonelocx.get(anchorid),2) + Math. pow(main.phonelocy.get(targetid)-main.phonelocy.get(anchorid),2),0.5);
+String loc = String.valueOf(main.phonelocx.get(anchorid))+";"+String.valueOf(main.phonelocy.get(anchorid));	    
+					 	
+//add dist measures to specific node index
+//node still not available in nodes until it reach destination
+if(!main.nodeids_added.contains(targetid))
+	{   //anchorid (this id), dist measure
+	    main.add_nodes();
+	    main.add_gcsp_nodes();
+	    main.nodeids_added.add(targetid);
+	    main.nodes.get(main.nodes.size()-1).nodeid = targetid;
+	    main.gcsp_nodes.get(main.nodes.size()-1).nodeid = targetid;
+	    //System.out.println(" main.nodes.get(main.nodes.size()-1).nodeid : "+ main.nodes.get(main.nodes.size()-1).nodeid);
+	    //if(main.nodes.get(main.nodes.size()-1).nodeid==relayid)System.out.println("yes");
+	    int i = main.nodeids_added.indexOf(targetid);
+	    //anchor node location, distance from anchor node to target node 
+	    //target node = relayid
+	    main.nodes.get(i).rssi_estimation_updates.put(anchorid,rssi_est_func(distanceFromEmerg));
+	    main.gcsp_nodes.get(i).rssi_estimation_updates.put(anchorid,rssi_est_func(distanceFromEmerg));
+	   // main.nodes.get(i).rssi_dist_est.put(loc,rssi_dist_est_func(rssi_est_func(distanceFromEmerg)));
+		main.nodes.get(i).tof_estimation_updates.put(anchorid,tof_est_func(distanceFromEmerg));
+		main.gcsp_nodes.get(i).tof_estimation_updates.put(anchorid,tof_est_func(distanceFromEmerg));
+		//main.nodes.get(i).tof_dist_est.put(loc,tof_dist_est_func(tof_est_func(distanceFromEmerg)));
+		//System.out.println("1: "+main.nodeid_nbdist_measure.get(relayid)!=null);
+		if(main.nodeid_nbdist_measure.get(targetid)!=null)
+			{
+				main.nodeid_nbdist_measure.put(targetid,main.nodeid_nbdist_measure.get(targetid)+2);
+			}
+		else
+			{
+				main.nodeid_nbdist_measure.put(targetid,2);
+			}
+	}		
+else
+	{	//if node is registered already add dist measures to the node
+		//index in which relayid is in nodeids_added
+	    if(targetid.equals(main.nodes.get(main.nodeids_added.indexOf(targetid)).nodeid))
+	    	{
+    		    int i = main.nodeids_added.indexOf(targetid);
+    		//if(main.nodes.get(i).nodeid==relayid)
+			    //System.out.println("nice");
+				main.nodes.get(i).rssi_estimation_updates.put(anchorid,rssi_est_func(distanceFromEmerg));
+			    main.gcsp_nodes.get(i).rssi_estimation_updates.put(anchorid,rssi_est_func(distanceFromEmerg));
+			    //main.nodes.get(i).rssi_dist_est.put(loc,rssi_dist_est_func(rssi_est_func(distanceFromEmerg)));
+				main.nodes.get(i).tof_estimation_updates.put(anchorid,tof_est_func(distanceFromEmerg));
+				main.gcsp_nodes.get(i).tof_estimation_updates.put(anchorid,tof_est_func(distanceFromEmerg));
+				//main.nodes.get(i).tof_dist_est.put(loc,tof_dist_est_func(tof_est_func(distanceFromEmerg)));	
+				//System.out.println("2: "+main.nodeid_nbdist_measure.get(relayid)!=null);
+				if(main.nodeid_nbdist_measure.get(targetid)!=null)
+					{
+						main.nodeid_nbdist_measure.put(targetid,main.nodeid_nbdist_measure.get(targetid)+2);
+					}
+				else
+					{
+						main.nodeid_nbdist_measure.put(targetid,2);
+					}
+			}
+
+	}
+//nbdistmeasurements
+//include nodeid, dist measurements in node agent]]></Body>
+				</Function>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>RETURNS_VALUE</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1630581583202</Id>
+					<Name><![CDATA[rssi_est_func]]></Name>
+					<X>680</X><Y>350</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Parameter>
+						<Name><![CDATA[distanceFromEmerg]]></Name>
+						<Type><![CDATA[double]]></Type>
+					</Parameter>
+					<Body><![CDATA[//rssi measurement calculation				 	
+double pathloss_emerg_relay = 46.3+33.9*Math.log10(885)-13.82*Math.log10(1.5)-0.0152+(44.9-6.55*Math.log10(1.5))*Math.log10(distanceFromEmerg)+0;
+double rssidBm_emerg_relay = 20 - pathloss_emerg_relay;
+
+//rssi actual
+double rssidBm_watts_emerg_relay = Math.pow(10,(rssidBm_emerg_relay-30)/10);	
+//System.out.println("rssidBm_watts_emerg_relay : "+rssidBm_watts_emerg_relay);	
+
+rssi_est = rssidBm_watts_emerg_relay;	
+return rssi_est;]]></Body>
+				</Function>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>RETURNS_VALUE</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1630581583204</Id>
+					<Name><![CDATA[tof_est_func]]></Name>
+					<X>680</X><Y>380</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Parameter>
+						<Name><![CDATA[distanceFromEmerg]]></Name>
+						<Type><![CDATA[double]]></Type>
+					</Parameter>
+					<Body><![CDATA[//tof actual
+tof_act= distanceFromEmerg/(0.3/100*3*Math.pow(10,8))*10;
+//System.out.println("tof: "+tof);
+//tof measure confidence level 
+tof_est = tof_act+uniform(-main.tof_confidence,main.tof_confidence);
+//main.tof_with_blind.put(String.valueOf(this.id),buffer_relayid.get(j)+";"+String.valueOf(tof));
+return tof_est;]]></Body>
+				</Function>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>RETURNS_VALUE</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1630581583206</Id>
+					<Name><![CDATA[tof_dist_est_func]]></Name>
+					<X>680</X><Y>410</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Parameter>
+						<Name><![CDATA[tof_est]]></Name>
+						<Type><![CDATA[double]]></Type>
+					</Parameter>
+					<Body><![CDATA[double dist_est=tof_est*(0.3/100*3*Math.pow(10,8))*10;
+
+//main.tof_with_blind.put(String.valueOf(this.id),buffer_relayid.get(j)+";"+String.valueOf(tof));
+return dist_est;]]></Body>
+				</Function>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>VOID</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1630581583208</Id>
+					<Name><![CDATA[incov_measures]]></Name>
+					<X>680</X><Y>300</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Parameter>
+						<Name><![CDATA[t]]></Name>
+						<Type><![CDATA[int]]></Type>
+					</Parameter>
+					<Body><![CDATA[String[] nodestring = main.successfully_reached_ids.get(emergcallids.get(emergcallids.size()-1)).split(";");
+String[] node_time = nodestring[t].split(" ts:");
+String[] time_reached = nodestring[nodestring.length-2].split(" ts:");		
+main.add_nodes();
+main.add_gcsp_nodes();
+main.nodeids_added.add(node_time[0]);
+main.nodes.get(main.nodes.size()-1).nodeid = node_time[0];
+main.gcsp_nodes.get(main.nodes.size()-1).nodeid = node_time[0];
+
+int hh = main.nodeids_added.indexOf(node_time[0]);
+//adding aoa, rssi, tof measures
+main.nodes.get(hh).aoa_estimation_updates.put(node_time[0],aoa_est_func(node_time[0]));
+main.gcsp_nodes.get(hh).aoa_estimation_updates.put(node_time[0],aoa_est_func(node_time[0]));
+//add rssi between gnb and incoverage node 
+double distanceFromEmerg = Math.pow(Math.pow(main.phonelocx.get(node_time[0])- this.locx,2) + Math. pow(main.phonelocy.get(node_time[0])-this.locy,2),0.5);
+//anchorid is equal to target id
+String loc = String.valueOf(this.locx)+";"+String.valueOf(this.locy);	    				
+//System.out.println("00: "+node_time[0]+";"+loc);
+main.nodes.get(hh).rssi_estimation_updates.put("gNB",rssi_est_func(distanceFromEmerg));
+main.gcsp_nodes.get(hh).rssi_estimation_updates.put("gNB",rssi_est_func(distanceFromEmerg));
+//main.nodes.get(hh).rssi_dist_est.put(loc,rssi_dist_est_func(rssi_est_func(distanceFromEmerg)));
+main.nodes.get(hh).tof_estimation_updates.put("gNB",tof_est_func(distanceFromEmerg));
+main.gcsp_nodes.get(hh).tof_estimation_updates.put("gNB",tof_est_func(distanceFromEmerg));
+//main.nodes.get(hh).tof_dist_est.put(loc,tof_dist_est_func(tof_est_func(distanceFromEmerg)));
+
+// information collected by this target node at time of relaying are stored directly in the node agent with nodeid= targetid
+int jj = main.nodeids_added.indexOf(node_time[0]);
+
+main.nodes.get(jj).nodeid_time_rssinbmeasure.put(time_reached[1],1);
+main.gcsp_nodes.get(jj).nodeid_time_rssinbmeasure.put(time_reached[1],1);
+main.nodeid_time_rssinbmeasure.put(node_time[0]+";"+String.valueOf(success_emerg_calls.get(received_emerg_calls-1).hit_time),1);
+
+if(main.nodeid_nbdist_measure.get(node_time[0])!=null)
+	{
+		main.nodeid_nbdist_measure.put(node_time[0],main.nodeid_nbdist_measure.get(node_time[0])+2);
+	}
+else
+	{
+		main.nodeid_nbdist_measure.put(node_time[0],2);
+	}]]></Body>
+				</Function>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>VOID</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1630581583210</Id>
+					<Name><![CDATA[missed_node_localization]]></Name>
+					<X>680</X><Y>270</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Parameter>
+						<Name><![CDATA[i]]></Name>
+						<Type><![CDATA[int]]></Type>
+					</Parameter>
+					<Body><![CDATA[//add node device ids supported to carry the call
+String[] nodestring = main.successfully_reached_ids.get(emergcallids.get(emergcallids.size()-1)).split(";");
+String[] node_time = nodestring[i].split(" ts:");
+
+//access each node in order
+//add measures if a target node does not contain any measures to localize its position 
+String[] anchorid = nodestring[i+1].split(" ts:");		
+if(!main.nodeids_added.contains(node_time[0]))
+	{
+		if(main.phonelocx.get(node_time[0])!=null&&!anchorid[0].equals("done"))
+			{
+				relay_localization_gnb(anchorid[0],node_time[0]);
+				int jj = main.nodeids_added.indexOf(node_time[0]);
+				//time the anchor id takes the measures is anchorid[1]
+				main.nodes.get(jj).nodeid_time_rssinbmeasure.put(anchorid[1],1);	
+				main.gcsp_nodes.get(jj).nodeid_time_rssinbmeasure.put(anchorid[1],1);
+			}
+	}]]></Body>
+				</Function>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>VOID</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1630581583212</Id>
+					<Name><![CDATA[write_vishaka]]></Name>
+					<X>630</X><Y>110</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Parameter>
+						<Name><![CDATA[rownumber]]></Name>
+						<Type><![CDATA[int]]></Type>
+					</Parameter>
+					<Parameter>
+						<Name><![CDATA[emergid]]></Name>
+						<Type><![CDATA[String]]></Type>
+					</Parameter>
+					<Parameter>
+						<Name><![CDATA[e_id]]></Name>
+						<Type><![CDATA[String]]></Type>
+					</Parameter>
+					<Parameter>
+						<Name><![CDATA[nodeid]]></Name>
+						<Type><![CDATA[String]]></Type>
+					</Parameter>
+					<Parameter>
+						<Name><![CDATA[xu]]></Name>
+						<Type><![CDATA[String]]></Type>
+					</Parameter>
+					<Parameter>
+						<Name><![CDATA[yu]]></Name>
+						<Type><![CDATA[String]]></Type>
+					</Parameter>
+					<Parameter>
+						<Name><![CDATA[bu]]></Name>
+						<Type><![CDATA[String]]></Type>
+					</Parameter>
+					<Parameter>
+						<Name><![CDATA[xr]]></Name>
+						<Type><![CDATA[String]]></Type>
+					</Parameter>
+					<Parameter>
+						<Name><![CDATA[yr]]></Name>
+						<Type><![CDATA[String]]></Type>
+					</Parameter>
+					<Parameter>
+						<Name><![CDATA[dist_est]]></Name>
+						<Type><![CDATA[String]]></Type>
+					</Parameter>
+					<Parameter>
+						<Name><![CDATA[aoa_est]]></Name>
+						<Type><![CDATA[String]]></Type>
+					</Parameter>
+					<Parameter>
+						<Name><![CDATA[GPS_radius]]></Name>
+						<Type><![CDATA[String]]></Type>
+					</Parameter>
+					<Parameter>
+						<Name><![CDATA[heading]]></Name>
+						<Type><![CDATA[String]]></Type>
+					</Parameter>
+					<Parameter>
+						<Name><![CDATA[time]]></Name>
+						<Type><![CDATA[String]]></Type>
+					</Parameter>
+					<Parameter>
+						<Name><![CDATA[nb_paths]]></Name>
+						<Type><![CDATA[String]]></Type>
+					</Parameter>
+					<Parameter>
+						<Name><![CDATA[pathid]]></Name>
+						<Type><![CDATA[String]]></Type>
+					</Parameter>
+					<Body><![CDATA[String a = String.format("Input!B%s", rownumber+1);
+String b = String.format("Input!C%s", rownumber+1);
+String c = String.format("Input!D%s", rownumber+1);
+String d = String.format("Input!E%s", rownumber+1);	
+String e = String.format("Input!F%s", rownumber+1);		
+String f= String.format("Input!G%s", rownumber+1);	
+String g = String.format("Input!H%s", rownumber+1);
+String h = String.format("Input!I%s", rownumber+1);
+String i = String.format("Input!J%s", rownumber+1);	
+String j = String.format("Input!K%s", rownumber+1);	
+String k = String.format("Input!L%s", rownumber+1);	
+String l = String.format("Input!M%s", rownumber+1);
+String m = String.format("Input!N%s", rownumber+1);
+String n = String.format("Input!O%s", rownumber+1);
+String o = String.format("Input!P%s", rownumber+1);
+main.excelFile.setFileName("csp.xlsx");
+
+//writing to excel
+main.excelFile.setCellValue( emergid, a);
+main.excelFile.setCellValue( e_id, b);
+main.excelFile.setCellValue( nodeid, c );
+main.excelFile.setCellValue( xu, d);
+main.excelFile.setCellValue( yu, e);
+main.excelFile.setCellValue( bu, f );
+main.excelFile.setCellValue( xr, g);
+main.excelFile.setCellValue( yr, h );
+main.excelFile.setCellValue( dist_est, i);
+main.excelFile.setCellValue( aoa_est, j );
+main.excelFile.setCellValue(GPS_radius, k );
+main.excelFile.setCellValue(heading, l );
+main.excelFile.setCellValue(time, m );
+main.excelFile.setCellValue(nb_paths, n);
+main.excelFile.setCellValue(pathid, o);
+main.excelFile.writeFile();]]></Body>
+				</Function>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>VOID</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1630581583214</Id>
+					<Name><![CDATA[write_gcsp]]></Name>
+					<X>630</X><Y>140</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Parameter>
+						<Name><![CDATA[rownumber]]></Name>
+						<Type><![CDATA[int]]></Type>
+					</Parameter>
+					<Parameter>
+						<Name><![CDATA[emergid]]></Name>
+						<Type><![CDATA[String]]></Type>
+					</Parameter>
+					<Parameter>
+						<Name><![CDATA[e_id]]></Name>
+						<Type><![CDATA[String]]></Type>
+					</Parameter>
+					<Parameter>
+						<Name><![CDATA[nodeid]]></Name>
+						<Type><![CDATA[String]]></Type>
+					</Parameter>
+					<Parameter>
+						<Name><![CDATA[xu]]></Name>
+						<Type><![CDATA[String]]></Type>
+					</Parameter>
+					<Parameter>
+						<Name><![CDATA[yu]]></Name>
+						<Type><![CDATA[String]]></Type>
+					</Parameter>
+					<Parameter>
+						<Name><![CDATA[bu]]></Name>
+						<Type><![CDATA[String]]></Type>
+					</Parameter>
+					<Parameter>
+						<Name><![CDATA[xr]]></Name>
+						<Type><![CDATA[String]]></Type>
+					</Parameter>
+					<Parameter>
+						<Name><![CDATA[yr]]></Name>
+						<Type><![CDATA[String]]></Type>
+					</Parameter>
+					<Parameter>
+						<Name><![CDATA[dist_est]]></Name>
+						<Type><![CDATA[String]]></Type>
+					</Parameter>
+					<Parameter>
+						<Name><![CDATA[aoa_est]]></Name>
+						<Type><![CDATA[String]]></Type>
+					</Parameter>
+					<Parameter>
+						<Name><![CDATA[GPS_radius]]></Name>
+						<Type><![CDATA[String]]></Type>
+					</Parameter>
+					<Parameter>
+						<Name><![CDATA[heading]]></Name>
+						<Type><![CDATA[String]]></Type>
+					</Parameter>
+					<Parameter>
+						<Name><![CDATA[time]]></Name>
+						<Type><![CDATA[String]]></Type>
+					</Parameter>
+					<Parameter>
+						<Name><![CDATA[nb_paths]]></Name>
+						<Type><![CDATA[String]]></Type>
+					</Parameter>
+					<Parameter>
+						<Name><![CDATA[pathid]]></Name>
+						<Type><![CDATA[String]]></Type>
+					</Parameter>
+					<Body><![CDATA[String a = String.format("priority!B%s", rownumber+1);
+String b = String.format("priority!C%s", rownumber+1);
+String c = String.format("priority!D%s", rownumber+1);
+String d = String.format("priority!E%s", rownumber+1);	
+String e = String.format("priority!F%s", rownumber+1);		
+String f= String.format("priority!G%s", rownumber+1);	
+String g = String.format("priority!H%s", rownumber+1);
+String h = String.format("priority!I%s", rownumber+1);
+String i = String.format("priority!J%s", rownumber+1);	
+String j = String.format("priority!K%s", rownumber+1);	
+String k = String.format("priority!L%s", rownumber+1);	
+String l = String.format("priority!M%s", rownumber+1);
+String m = String.format("priority!N%s", rownumber+1);
+String n = String.format("priority!O%s", rownumber+1);
+String o = String.format("priority!P%s", rownumber+1);
+main.excelFile.setFileName("csp.xlsx");
+//writing to excel
+main.excelFile.setCellValue( emergid, a);
+main.excelFile.setCellValue( e_id, b );
+main.excelFile.setCellValue( nodeid, c );
+main.excelFile.setCellValue( xu, d);
+main.excelFile.setCellValue( yu, e);
+main.excelFile.setCellValue( bu, f );
+main.excelFile.setCellValue( xr, g);
+main.excelFile.setCellValue( yr, h );
+main.excelFile.setCellValue( dist_est, i);
+main.excelFile.setCellValue( aoa_est, j );
+main.excelFile.setCellValue(GPS_radius, k );
+main.excelFile.setCellValue(heading, l );
+main.excelFile.setCellValue(time, m );
+main.excelFile.setCellValue(nb_paths, n);
+main.excelFile.setCellValue(pathid, o);
+main.excelFile.writeFile();]]></Body>
+				</Function>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>VOID</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1630581583216</Id>
+					<Name><![CDATA[f1]]></Name>
+					<X>680</X><Y>240</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Body><![CDATA[//phone sends an emergency call succcesffully to the gNB
+received_emerg_calls++;
+//System.out.println("22: "+received_emerg_calls);
+//add another successful emergency call which is used to evaluate each success call
+//success call addition
+add_success_emerg_calls();
+
+//add attributes to each successful call
+success_emerg_calls.get(received_emerg_calls-1).emergcallid = emergcallids.get(emergcallids.size()-1); 
+success_emerg_calls.get(received_emerg_calls-1).hit_time = hit_time_array.get(hit_time_array.size()-1);
+
+//System.out.println("222: "+success_emerg_calls.get(received_emerg_calls-1).emergcallid );
+//add node device ids supported to carry the call
+String[] nodestring = main.successfully_reached_ids.get(emergcallids.get(emergcallids.size()-1)).split(";");
+incoming_node_array.clear();
+
+//last nodestring "done" is avoided by choosing the limit nodestring.length-1
+//add nodes which have not been added in phone agent
+for(int i=0;i<nodestring.length-1;i++)
+	{
+		String[] node_time = nodestring[i].split(" ts:");
+		
+		missed_node_localization(i);
+			
+		if(!main.nodeids_added.contains(node_time[0])&&main.incoverage_ids.contains(Integer.valueOf(node_time[0])))//localization of incoverage nodes 
+			{
+				incov_measures(i);//aoa estimate at the last relayid in main.successfully_reached_ids
+			}
+	}
+	
+incoming_node_array.clear();//clear priority_node_array
+if(main.v2_random_cost_based==true)//localization algo type 2	//v2 random cost based node consideration
+	{	
+		incoming_node_array.clear();
+		main.nbpaths++;
+		main.nbpath_nodestring.put(main.nbpaths,main.successfully_reached_ids.get(emergcallids.get(emergcallids.size()-1)));
+		for(int i=0;i<nodestring.length-1;i++)//array: in ascending order of each node's priority
+			{
+				String[] node_time = nodestring[i].split(" ts:");			
+						
+				int hg = main.nodeids_added.indexOf(node_time[0]);
+				
+				main.nodes.get(hg).nb_paths_contributed++;//increase the nb times the node contributes in the relaying by 1
+				main.gcsp_nodes.get(hg).nb_paths_contributed++;
+				double node_locarea =  main.id_GPS_accuracy.get(Integer.valueOf(node_time[0]));	//GPS is available choose the GPS accuracy
+				double distancefromnearestgNB = Math.pow(Math.pow(main.phonelocx.get(node_time[0])- main.gNBs.get(0).getX(),2) + Math.pow(main.phonelocy.get(node_time[0])-main.gNBs.get(0).getY(),2),0.5);
+							
+				//based on how many paths the node belongs to
+			    int most_contributing_node = main.nodes.get(hg).nb_paths_contributed;
+				
+			    //priority objective function
+			    double priority_node = 1*node_locarea + 1*1/distancefromnearestgNB + 1*most_contributing_node;//all parameters necessary to set the priority of the node
+			     
+			    //store all relay node in priority in order of magnitude, ascending order 
+			    if(!incoming_node_array.contains(String.valueOf(priority_node)+";"+node_time[0]))
+			    	{
+			    		incoming_node_array.add(String.valueOf(priority_node)+";"+node_time[0]);		    		
+			    	}
+			}
+		int pathnumber = emergcallids.size();//path id
+		
+		for(int u=0;u<incoming_node_array.size()-1; u++)//relative localizing in order of priority
+			{
+				String[] incoming_node = incoming_node_array.get(u).split(";");//select priority node first out of all the nodes in the successfully reach ids array
+				String min_area_id = incoming_node[1];
+				int gk = main.nodeids_added.indexOf(min_area_id);
+				send("activate node",main.nodes.get(gk));
+				//System.out.println("2222: "+main.nodes.get(gk).nodeid);	
+				main.rownumber++;
+				main.nodes.get(gk).pathnumber = pathnumber;
+				main.nodes.get(gk).rownumber = main.rownumber;
+				main.nodes.get(gk).considered_emergcall.add(emergcallids.get(emergcallids.size()-1));	    
+			}
+			
+		//System.out.println("00: "+incoming_node_array.size());
+		Collections.sort(incoming_node_array); 
+		//System.out.println("01: "+incoming_node_array.size());
+		for(int u=incoming_node_array.size()-1; u>=0; u--)//highest priority to lowest priority
+			{
+				String[] incoming_node = incoming_node_array.get(u).split(";");//select priority node first out of all the nodes in the successfully reach ids array
+				String min_area_id = incoming_node[1];
+				int hh = main.nodeids_added.indexOf(min_area_id);
+				send("activate node",main.gcsp_nodes.get(hh));
+				main.gcsp_rownumber++;
+				main.gcsp_nodes.get(hh).pathnumber = pathnumber;
+				main.gcsp_nodes.get(hh).rownumber = main.gcsp_rownumber;
+				main.gcsp_nodes.get(hh).considered_emergcall.add(emergcallids.get(emergcallids.size()-1));	        
+			}
+	}]]></Body>
+				</Function>
+			</Functions>
+			<AgentLinks>
+				<AgentLink>
+					<Id>1630581416893</Id>
+					<Name><![CDATA[connections]]></Name>
+					<X>50</X><Y>-50</Y>
+					<Label><X>15</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<HandleReceiveInConnections>false</HandleReceiveInConnections>
+					<AgentLinkType>COLLECTION_OF_LINKS</AgentLinkType>
+					<AgentLinkBidirectional>true</AgentLinkBidirectional>
+					<MessageType><![CDATA[Object]]></MessageType>
+					<StatechartReference>
+						<PackageName><![CDATA[am_help_with_buffer_tr]]></PackageName>
+						<ClassName><![CDATA[gNB]]></ClassName>
+						<ItemName><![CDATA[emergencyplatform]]></ItemName>
+					</StatechartReference>
+					<LineStyle>SOLID</LineStyle>
+					<LineWidth>1</LineWidth>
+					<LineColor>-16777216</LineColor>
+					<LineZOrder>UNDER_AGENTS</LineZOrder>
+					<LineArrow>NONE</LineArrow>
+					<LineArrowPosition>END</LineArrowPosition>
+				</AgentLink>
+			</AgentLinks>
+
+			<ContainerLinks>
+				<ContainerLink>
+					<Id>1630581438680</Id>
+					<Name><![CDATA[main]]></Name>
+					<X>50</X><Y>-100</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<ActiveObjectClass>
+						<PackageName><![CDATA[am_help_with_buffer_tr]]></PackageName>
+						<ClassName><![CDATA[Main]]></ClassName>
+					</ActiveObjectClass>
+				</ContainerLink>
+			</ContainerLinks>
+			<EmbeddedObjects>
+				<EmbeddedObject>
+					<Id>1630591050614</Id>
+					<Name><![CDATA[success_emerg_calls]]></Name>
+					<X>320</X><Y>-100</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<ActiveObjectClass>
+						<PackageName><![CDATA[am_help_with_buffer_tr]]></PackageName>
+						<ClassName><![CDATA[success_emerg_call]]></ClassName>
+					</ActiveObjectClass>
+					<GenericParameterSubstitute>
+						<GenericParameterSubstituteReference>
+							<PackageName><![CDATA[am_help_with_buffer_tr]]></PackageName>
+							<ClassName><![CDATA[success_emerg_call]]></ClassName>
+							<ItemName><![CDATA[1630591050611]]></ItemName>
+						</GenericParameterSubstituteReference>
+					</GenericParameterSubstitute>
+					<Parameters>
+						<Parameter>
+							<Name><![CDATA[emergcallid]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[hit_time]]></Name>
+						</Parameter>
+					</Parameters>
+					<ReplicationFlag>true</ReplicationFlag>
+					<Replication Class="CodeValue">
+						<Code><![CDATA[100]]></Code>
+					</Replication>
+					<CollectionType>ARRAY_LIST_BASED</CollectionType>
+					<InEnvironment>true</InEnvironment>	
+					<InitialLocationType>AT_ANIMATION_POSITION</InitialLocationType>
+					<XCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</XCode>
+					<YCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</YCode>
+					<ZCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</ZCode>
+					<ColumnCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</ColumnCode>
+					<RowCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</RowCode>
+					<LatitudeCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</LatitudeCode>
+					<LongitudeCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</LongitudeCode>
+					<LocationNameCode Class="CodeValue">
+						<Code><![CDATA[""]]></Code>
+					</LocationNameCode>
+					<InitializationType>SPECIFIED_NUMBER</InitializationType>
+					<InitializationDatabaseTableQuery>
+						<TableReference>
+						</TableReference>
+					</InitializationDatabaseTableQuery>
+					<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+					<QuantityColumn>
+					</QuantityColumn>
+				</EmbeddedObject>
+			</EmbeddedObjects>
+
+			<Presentation>
+				<Level>
+					<Id>1630581416897</Id>
+					<Name><![CDATA[level]]></Name>
+					<X>0</X><Y>0</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<Z>0</Z>
+					<LevelVisibility>DIM_NON_CURRENT</LevelVisibility>
+
+			<Presentation>
+				<Group>
+					<Id>1630581438638</Id>
+					<Name><![CDATA[house]]></Name>
+					<X>0</X><Y>0</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+
+			<Presentation>
+				<Polyline>
+					<Id>1630581438640</Id>
+					<Name><![CDATA[_ps257]]></Name>
+					<X>-1</X><Y>10</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<ZHeight>10</ZHeight>
+					<LineWidth>1</LineWidth>
+					<LineColor/>
+					<LineMaterial>null</LineMaterial>
+					<LineStyle>SOLID</LineStyle>
+					<BeginArrowSize>1</BeginArrowSize>
+					<BeginArrowStyle>0</BeginArrowStyle>
+					<EndArrowSize>1</EndArrowSize>
+					<EndArrowStyle>0</EndArrowStyle>
+					<FillColor>-11563064</FillColor>
+					<FillMaterial>null</FillMaterial>
+					<Points>
+					   <Point><X>0</X><Y>0</Y><Z>0</Z></Point>
+					   <Point><X>10</X><Y>-5</Y><Z>0</Z></Point>
+					   <Point><X>10</X><Y>-11</Y><Z>0</Z></Point>
+					   <Point><X>0</X><Y>-6</Y><Z>0</Z></Point>
+					</Points>
+					<Closed>true</Closed>
+				</Polyline>
+				<Polyline>
+					<Id>1630581438642</Id>
+					<Name><![CDATA[_ps258]]></Name>
+					<X>-1</X><Y>4</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<ZHeight>10</ZHeight>
+					<LineWidth>1</LineWidth>
+					<LineColor/>
+					<LineMaterial>null</LineMaterial>
+					<LineStyle>SOLID</LineStyle>
+					<BeginArrowSize>1</BeginArrowSize>
+					<BeginArrowStyle>0</BeginArrowStyle>
+					<EndArrowSize>1</EndArrowSize>
+					<EndArrowStyle>0</EndArrowStyle>
+					<FillColor>-5716507</FillColor>
+					<FillMaterial>null</FillMaterial>
+					<Points>
+					   <Point><X>0</X><Y>0</Y><Z>0</Z></Point>
+					   <Point><X>10</X><Y>-5</Y><Z>0</Z></Point>
+					   <Point><X>5</X><Y>-11</Y><Z>0</Z></Point>
+					   <Point><X>-5</X><Y>-6</Y><Z>0</Z></Point>
+					</Points>
+					<Closed>true</Closed>
+				</Polyline>
+				<Polyline>
+					<Id>1630581438644</Id>
+					<Name><![CDATA[_ps259]]></Name>
+					<X>-11</X><Y>5</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<ZHeight>10</ZHeight>
+					<LineWidth>1</LineWidth>
+					<LineColor/>
+					<LineMaterial>null</LineMaterial>
+					<LineStyle>SOLID</LineStyle>
+					<BeginArrowSize>1</BeginArrowSize>
+					<BeginArrowStyle>0</BeginArrowStyle>
+					<EndArrowSize>1</EndArrowSize>
+					<EndArrowStyle>0</EndArrowStyle>
+					<FillColor>-8607017</FillColor>
+					<FillMaterial>null</FillMaterial>
+					<Points>
+					   <Point><X>0</X><Y>0</Y><Z>0</Z></Point>
+					   <Point><X>0</X><Y>-6</Y><Z>0</Z></Point>
+					   <Point><X>5</X><Y>-7</Y><Z>0</Z></Point>
+					   <Point><X>10</X><Y>-1</Y><Z>0</Z></Point>
+					   <Point><X>10</X><Y>5</Y><Z>0</Z></Point>
+					</Points>
+					<Closed>true</Closed>
+				</Polyline>
+				<Polyline>
+					<Id>1630581438646</Id>
+					<Name><![CDATA[_ps260]]></Name>
+					<X>-11</X><Y>-1</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<ZHeight>10</ZHeight>
+					<LineWidth>1</LineWidth>
+					<LineColor/>
+					<LineMaterial>null</LineMaterial>
+					<LineStyle>SOLID</LineStyle>
+					<BeginArrowSize>1</BeginArrowSize>
+					<BeginArrowStyle>0</BeginArrowStyle>
+					<EndArrowSize>1</EndArrowSize>
+					<EndArrowStyle>0</EndArrowStyle>
+					<FillColor>-2168075</FillColor>
+					<FillMaterial>null</FillMaterial>
+					<Points>
+					   <Point><X>0</X><Y>0</Y><Z>0</Z></Point>
+					   <Point><X>10</X><Y>-5</Y><Z>0</Z></Point>
+					   <Point><X>15</X><Y>-6</Y><Z>0</Z></Point>
+					   <Point><X>5</X><Y>-1</Y><Z>0</Z></Point>
+					</Points>
+					<Closed>true</Closed>
+				</Polyline>
+				<Polyline>
+					<Id>1630581438648</Id>
+					<Name><![CDATA[_ps261]]></Name>
+					<X>-1</X><Y>10</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<ZHeight>10</ZHeight>
+					<LineWidth>1</LineWidth>
+					<LineColor>-14734530</LineColor>
+					<LineMaterial>null</LineMaterial>
+					<LineStyle>SOLID</LineStyle>
+					<BeginArrowSize>1</BeginArrowSize>
+					<BeginArrowStyle>0</BeginArrowStyle>
+					<EndArrowSize>1</EndArrowSize>
+					<EndArrowStyle>0</EndArrowStyle>
+					<FillColor/>
+					<FillMaterial>null</FillMaterial>
+					<Points>
+					   <Point><X>0</X><Y>0</Y><Z>0</Z></Point>
+					   <Point><X>10</X><Y>-5</Y><Z>0</Z></Point>
+					   <Point><X>10</X><Y>-11</Y><Z>0</Z></Point>
+					   <Point><X>5</X><Y>-17</Y><Z>0</Z></Point>
+					   <Point><X>0</X><Y>-16</Y><Z>0</Z></Point>
+					   <Point><X>-10</X><Y>-11</Y><Z>0</Z></Point>
+					   <Point><X>-10</X><Y>-5</Y><Z>0</Z></Point>
+					</Points>
+					<Closed>true</Closed>
+				</Polyline>
+				<Polyline>
+					<Id>1630581438650</Id>
+					<Name><![CDATA[_ps262]]></Name>
+					<X>-9</X><Y>4</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<ZHeight>10</ZHeight>
+					<LineWidth>1</LineWidth>
+					<LineColor/>
+					<LineMaterial>null</LineMaterial>
+					<LineStyle>SOLID</LineStyle>
+					<BeginArrowSize>1</BeginArrowSize>
+					<BeginArrowStyle>0</BeginArrowStyle>
+					<EndArrowSize>1</EndArrowSize>
+					<EndArrowStyle>0</EndArrowStyle>
+					<FillColor>-12823945</FillColor>
+					<FillMaterial>null</FillMaterial>
+					<Points>
+					   <Point><X>0</X><Y>0</Y><Z>0</Z></Point>
+					   <Point><X>2</X><Y>1</Y><Z>0</Z></Point>
+					   <Point><X>2</X><Y>-2</Y><Z>0</Z></Point>
+					   <Point><X>0</X><Y>-3</Y><Z>0</Z></Point>
+					</Points>
+					<Closed>true</Closed>
+				</Polyline>
+				<Polyline>
+					<Id>1630581438652</Id>
+					<Name><![CDATA[_ps263]]></Name>
+					<X>1</X><Y>7</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<ZHeight>10</ZHeight>
+					<LineWidth>1</LineWidth>
+					<LineColor/>
+					<LineMaterial>null</LineMaterial>
+					<LineStyle>SOLID</LineStyle>
+					<BeginArrowSize>1</BeginArrowSize>
+					<BeginArrowStyle>0</BeginArrowStyle>
+					<EndArrowSize>1</EndArrowSize>
+					<EndArrowStyle>0</EndArrowStyle>
+					<FillColor>-12823945</FillColor>
+					<FillMaterial>null</FillMaterial>
+					<Points>
+					   <Point><X>0</X><Y>0</Y><Z>0</Z></Point>
+					   <Point><X>2</X><Y>-1</Y><Z>0</Z></Point>
+					   <Point><X>2</X><Y>-4</Y><Z>0</Z></Point>
+					   <Point><X>0</X><Y>-3</Y><Z>0</Z></Point>
+					</Points>
+					<Closed>true</Closed>
+				</Polyline>
+				<Polyline>
+					<Id>1630581438654</Id>
+					<Name><![CDATA[_ps264]]></Name>
+					<X>-5</X><Y>6</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<ZHeight>10</ZHeight>
+					<LineWidth>1</LineWidth>
+					<LineColor/>
+					<LineMaterial>null</LineMaterial>
+					<LineStyle>SOLID</LineStyle>
+					<BeginArrowSize>1</BeginArrowSize>
+					<BeginArrowStyle>0</BeginArrowStyle>
+					<EndArrowSize>1</EndArrowSize>
+					<EndArrowStyle>0</EndArrowStyle>
+					<FillColor>-12823945</FillColor>
+					<FillMaterial>null</FillMaterial>
+					<Points>
+					   <Point><X>0</X><Y>0</Y><Z>0</Z></Point>
+					   <Point><X>2</X><Y>1</Y><Z>0</Z></Point>
+					   <Point><X>2</X><Y>-2</Y><Z>0</Z></Point>
+					   <Point><X>0</X><Y>-3</Y><Z>0</Z></Point>
+					</Points>
+					<Closed>true</Closed>
+				</Polyline>
+				<Polyline>
+					<Id>1630581438656</Id>
+					<Name><![CDATA[_ps265]]></Name>
+					<X>-1</X><Y>10</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<ZHeight>10</ZHeight>
+					<LineWidth>1</LineWidth>
+					<LineColor/>
+					<LineMaterial>null</LineMaterial>
+					<LineStyle>SOLID</LineStyle>
+					<BeginArrowSize>1</BeginArrowSize>
+					<BeginArrowStyle>0</BeginArrowStyle>
+					<EndArrowSize>1</EndArrowSize>
+					<EndArrowStyle>0</EndArrowStyle>
+					<FillColor>1342177280</FillColor>
+					<FillMaterial>null</FillMaterial>
+					<Points>
+					   <Point><X>0</X><Y>0</Y><Z>0</Z></Point>
+					   <Point><X>4</X><Y>2</Y><Z>0</Z></Point>
+					   <Point><X>14</X><Y>-3</Y><Z>0</Z></Point>
+					   <Point><X>10</X><Y>-5</Y><Z>0</Z></Point>
+					</Points>
+					<Closed>true</Closed>
+				</Polyline>
+			</Presentation>
+
+				</Group>
+			</Presentation>
+
+				</Level>
+			</Presentation>
+
+		</ActiveObjectClass>
+		<!--   =========   Active Object Class   ========  -->
+		<ActiveObjectClass>
+			<Id>1630591050613</Id>
+			<Name><![CDATA[success_emerg_call]]></Name>
+			<ClientAreaTopLeft><X>0</X><Y>0</Y></ClientAreaTopLeft>
+			<Generic>false</Generic>
+			<GenericParameter>
+				<Id>1630591050611</Id>
+				<Name><![CDATA[1630591050611]]></Name>
+				<GenericParameterValue Class="CodeValue">
+					<Code><![CDATA[T extends Agent]]></Code>
+				</GenericParameterValue>
+				<GenericParameterLabel><![CDATA[Generic parameter:]]></GenericParameterLabel>
+			</GenericParameter>
+			<FlowChartsUsage>ENTITY</FlowChartsUsage>
+			<SamplesToKeep>100</SamplesToKeep>
+			<LimitNumberOfArrayElements>false</LimitNumberOfArrayElements>
+			<ElementsLimitValue>100</ElementsLimitValue>
+			<MakeDefaultViewArea>true</MakeDefaultViewArea>
+			<SceneGridColor/>
+			<SceneBackgroundColor/>
+			<SceneSkybox>null</SceneSkybox>
+			<AgentProperties>
+	 			<SpaceType>CONTINUOUS</SpaceType>			
+				<EnvironmentDefinesInitialLocation>true</EnvironmentDefinesInitialLocation>
+				<RotateAnimationTowardsMovement>true</RotateAnimationTowardsMovement>
+				<RotateAnimationVertically>false</RotateAnimationVertically>
+				<VelocityCode Class="CodeUnitValue">
+					<Code><![CDATA[10]]></Code>
+					<Unit Class="SpeedUnits"><![CDATA[MPS]]></Unit>
+				</VelocityCode>
+				<PhysicalLength Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="LengthUnits"><![CDATA[METER]]></Unit>
+				</PhysicalLength>
+				<PhysicalWidth Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="LengthUnits"><![CDATA[METER]]></Unit>
+				</PhysicalWidth>
+				<PhysicalHeight Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="LengthUnits"><![CDATA[METER]]></Unit>
+				</PhysicalHeight>
+			</AgentProperties>
+			<EnvironmentProperties>
+					<EnableSteps>false</EnableSteps>
+					<StepDurationCode Class="CodeUnitValue">
+						<Code><![CDATA[1.0]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[SECOND]]></Unit>
+					</StepDurationCode>
+					<SpaceType>CONTINUOUS</SpaceType>
+					<WidthCode><![CDATA[500]]></WidthCode>
+					<HeightCode><![CDATA[500]]></HeightCode>
+					<ZHeightCode><![CDATA[0]]></ZHeightCode>
+					<ColumnsCountCode><![CDATA[100]]></ColumnsCountCode>
+					<RowsCountCode><![CDATA[100]]></RowsCountCode>
+					<NeigborhoodType>MOORE</NeigborhoodType>
+					<LayoutType>USER_DEF</LayoutType>
+					<LayoutTypeApplyOnStartup>true</LayoutTypeApplyOnStartup>
+					<NetworkType>USER_DEF</NetworkType>
+					<NetworkTypeApplyOnStartup>true</NetworkTypeApplyOnStartup>
+					<ConnectionsPerAgentCode><![CDATA[2]]></ConnectionsPerAgentCode>
+					<ConnectionsRangeCode><![CDATA[50]]></ConnectionsRangeCode>
+					<NeighborLinkFractionCode><![CDATA[0.95]]></NeighborLinkFractionCode>
+					<MCode><![CDATA[10]]></MCode>
+			</EnvironmentProperties>
+			<DatasetsCreationProperties>
+				<AutoCreate>true</AutoCreate>
+					<OccurrenceAtTime>true</OccurrenceAtTime>
+					<OccurrenceDate>1630656000000</OccurrenceDate>
+					<OccurrenceTime Class="CodeUnitValue">
+						<Code><![CDATA[0]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[SECOND]]></Unit>
+					</OccurrenceTime>
+					<RecurrenceCode Class="CodeUnitValue">
+						<Code><![CDATA[1]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[SECOND]]></Unit>
+					</RecurrenceCode>
+			</DatasetsCreationProperties>
+			<ScaleRuler>
+				<Id>1630591050609</Id>
+				<Name><![CDATA[scale]]></Name>
+				<X>0</X><Y>-150</Y>
+				<PublicFlag>false</PublicFlag>
+				<PresentationFlag>false</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+				<Length>100</Length>
+				<Rotation>0</Rotation>
+				<ScaleType>BASED_ON_LENGTH</ScaleType>
+				<ModelLength>10</ModelLength>
+				<LengthUnits>METER</LengthUnits>
+				<Scale>10</Scale>
+				<InheritedFromParentAgentType>true</InheritedFromParentAgentType>
+			</ScaleRuler>
+			<CurrentLevel>1630591050612</CurrentLevel>
+			<ConnectionsId>1630591050608</ConnectionsId>
+			<Variables>
+				<Variable Class="Parameter">
+					<Id>1630591053903</Id>
+					<Name><![CDATA[emergcallid]]></Name>
+					<X>50</X><Y>30</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[String]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<ParameterEditor>
+							<Id>1630591053901</Id>
+							<EditorContolType>TEXT_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1630591053918</Id>
+					<Name><![CDATA[hit_time]]></Name>
+					<X>50</X><Y>70</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[double]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<ParameterEditor>
+							<Id>1630591053916</Id>
+							<EditorContolType>TEXT_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+			</Variables>
+			<AgentLinks>
+				<AgentLink>
+					<Id>1630591050608</Id>
+					<Name><![CDATA[connections]]></Name>
+					<X>50</X><Y>-50</Y>
+					<Label><X>15</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<HandleReceiveInConnections>false</HandleReceiveInConnections>
+					<AgentLinkType>COLLECTION_OF_LINKS</AgentLinkType>
+					<AgentLinkBidirectional>true</AgentLinkBidirectional>
+					<MessageType><![CDATA[Object]]></MessageType>
+					<LineStyle>SOLID</LineStyle>
+					<LineWidth>1</LineWidth>
+					<LineColor>-16777216</LineColor>
+					<LineZOrder>UNDER_AGENTS</LineZOrder>
+					<LineArrow>NONE</LineArrow>
+					<LineArrowPosition>END</LineArrowPosition>
+				</AgentLink>
+			</AgentLinks>
+
+			<ContainerLinks>
+				<ContainerLink>
+					<Id>1630591050624</Id>
+					<Name><![CDATA[main]]></Name>
+					<X>50</X><Y>-100</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<ActiveObjectClass>
+						<PackageName><![CDATA[am_help_with_buffer_tr]]></PackageName>
+						<ClassName><![CDATA[Main]]></ClassName>
+					</ActiveObjectClass>
+				</ContainerLink>
+				<ContainerLink>
+					<Id>1630591050625</Id>
+					<Name><![CDATA[gNB]]></Name>
+					<X>150</X><Y>-100</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<ActiveObjectClass>
+						<PackageName><![CDATA[am_help_with_buffer_tr]]></PackageName>
+						<ClassName><![CDATA[gNB]]></ClassName>
+					</ActiveObjectClass>
+				</ContainerLink>
+			</ContainerLinks>
+
+			<Presentation>
+				<Level>
+					<Id>1630591050612</Id>
+					<Name><![CDATA[level]]></Name>
+					<X>0</X><Y>0</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<Z>0</Z>
+					<LevelVisibility>DIM_NON_CURRENT</LevelVisibility>
+
 
 				</Level>
 			</Presentation>
