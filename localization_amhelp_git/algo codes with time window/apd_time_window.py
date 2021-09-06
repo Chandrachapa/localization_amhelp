@@ -290,13 +290,13 @@ def collect_data(j,emergarr,all_x_gps):
     y1_truth = ydist
     #e_y = Interval(-float(df.loc[j][9])*0.01,float(df.loc[j][9])*0.01)#distance based error
     #y1_est = Interval(float(df.loc[j][9])+e_y)
-    y1_est = Interval(y1_truth+e_y)
+    y1_est = Interval(ydist+e_y*ydist)
     y_est = [y1_est]
     if (toa_availability==True):
         benchmark_est = [IntervalVector([b1,b2]),IntervalVector([b1,b2])]
         #y3_est = Interval(float(df.loc[j][9])+e_toa)#toa range
-        y3_est = Interval(y1_truth+e_toa)
-        y_est = [y1_est,y1_est]
+        y3_est = Interval(ydist+e_toa*ydist)
+        y_est = [y1_est,y3_est]
         theta_est = [Interval(theta1+e_t),Interval(theta1+e_t)]#estimated theta of bench nodes 
 
     if (node_benchtruth.get(nodeid)== None):#nodeid, benchtruth location 

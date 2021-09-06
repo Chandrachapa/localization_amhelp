@@ -145,57 +145,57 @@ e_g = Interval(0.1*random.randint(-217,-20),0.1*random.randint(20,217))
 #e_t = Interval(0.0*random.randint(0,0),0.0*random.randint(0,0))
 
 #initial gps estimate of each benchmark node 
-def gps_estimate(starting_row, last_row):
-    for i in range(starting_row,last_row):
-        emerg_ids = df.loc[i][2] # emerg id
-        x_ids = df.loc[i][3] # node id
-        x1 = df.loc[i][4]
-        x2 = df.loc[i][5]
-        if xgps_all.get(x_ids) == None:
-            gps_radius = 1994.737/(997.368**float(df.loc[i][11]))#worst : 1000, best : 2m
-            #gps_radius = 180/(75**float(df.loc[i][11]))
-            #gps_radius = 1/(1**float(df.loc[i][11]))
-            angle = 0.01*random.randint(0,600)
-            #print(np.cos(angle))
-            #gps_radius=0
-            x_gps = gps_radius*np.cos(angle)+x1
-            y_gps = gps_radius*np.sin(angle)+x2
-            xgps_all[x_ids] = x_gps  
-            e_radius = Interval(0,0.1)#distance based error
-            #y1_est = Interval(float(df.loc[j][9])+e_radius)     
-            if ygps_all.get(x_ids) == None:
-                ygps_all[x_ids] = y_gps 
-        #print('angle',angle,np.cos(angle),np.sin(angle),gps_radius,x1,x2,x_gps,y_gps)
-        #e_g = Interval(random.uniform(-(50+gps_radius),-gps_radius),random.uniform(gps_radius,gps_radius+50))
-        g1 = Interval(xgps_all[x_ids]+e_g)
-        g2 = Interval(ygps_all[x_ids]+e_g)
-        #print('angle',angle,np.cos(angle),np.sin(angle),gps_radius,x1,x2,x_gps,y_gps,g1,g2)
-        eudist_xtruth = (x1,x2)
-        eudist_est = (g1.mid(),g2.mid())
-        #print('xtruth',x_ids,eudist_xtruth )
-        eudist =  distance.euclidean(eudist_xtruth,eudist_est)
-        #print('edist',eudist ,gps_radius)
-        xy_gps =IntervalVector([g1,g2])#gps locations of nodes 
-        #print('gps_radius',gps_radius)
-        #all_gps_radius[x_ids]= Interval(0.01,gps_radius+0.01)
-        all_gps_radius[x_ids]= Interval(0.01,eudist+0.01)
-        if all_x_gps.get(x_ids) == None:
-            all_x_gps[x_ids]=xy_gps#estimated locations of nodes  #estimated locations of nodes 
-            x11 = all_x_gps[x_ids][0].mid()
-            x22 = all_x_gps[x_ids][1].mid()
-            if (all_x_gps[x_ids][0].is_empty()):
-                print('yes empty',x_ids,all_x_gps[x_ids][0])
-            #heading_gps = atan2(x22,x11)
-            heading_gps = atan2(x2,x1)
-            #if (heading_gps<0):
-              #heading_gps = heading_gps+2*math.pi
-            e_h = Interval(heading_gps).inflate(0.01)
-            node_heading[x_ids] = e_h
-            gps_theta =  math.atan2(x22-x2,x11-x1)
-            #if (gps_theta<0):
-              #gps_theta = gps_theta+2*math.pi
-            all_x_gpstheta[x_ids] = gps_theta
-    return all_x_gps,all_x_gpstheta,node_heading
+#def gps_estimate(starting_row, last_row):
+for i in range(1,rows):
+    emerg_ids = df.loc[i][2] # emerg id
+    x_ids = df.loc[i][3] # node id
+    x1 = df.loc[i][4]
+    x2 = df.loc[i][5]
+    if xgps_all.get(x_ids) == None:
+        gps_radius = 1994.737/(997.368**float(df.loc[i][11]))#worst : 1000, best : 2m
+        #gps_radius = 180/(75**float(df.loc[i][11]))
+        #gps_radius = 1/(1**float(df.loc[i][11]))
+        angle = 0.01*random.randint(0,600)
+        #print(np.cos(angle))
+        #gps_radius=0
+        x_gps = gps_radius*np.cos(angle)+x1
+        y_gps = gps_radius*np.sin(angle)+x2
+        xgps_all[x_ids] = x_gps  
+        e_radius = Interval(0,0.1)#distance based error
+        #y1_est = Interval(float(df.loc[j][9])+e_radius)     
+        if ygps_all.get(x_ids) == None:
+            ygps_all[x_ids] = y_gps 
+    #print('angle',angle,np.cos(angle),np.sin(angle),gps_radius,x1,x2,x_gps,y_gps)
+    #e_g = Interval(random.uniform(-(50+gps_radius),-gps_radius),random.uniform(gps_radius,gps_radius+50))
+    g1 = Interval(xgps_all[x_ids]+e_g)
+    g2 = Interval(ygps_all[x_ids]+e_g)
+    #print('angle',angle,np.cos(angle),np.sin(angle),gps_radius,x1,x2,x_gps,y_gps,g1,g2)
+    eudist_xtruth = (x1,x2)
+    eudist_est = (g1.mid(),g2.mid())
+    #print('xtruth',x_ids,eudist_xtruth )
+    eudist =  distance.euclidean(eudist_xtruth,eudist_est)
+    #print('edist',eudist ,gps_radius)
+    xy_gps =IntervalVector([g1,g2])#gps locations of nodes 
+    #print('gps_radius',gps_radius)
+    #all_gps_radius[x_ids]= Interval(0.01,gps_radius+0.01)
+    all_gps_radius[x_ids]= Interval(0.01,eudist+0.01)
+    if all_x_gps.get(x_ids) == None:
+        all_x_gps[x_ids]=xy_gps#estimated locations of nodes  #estimated locations of nodes 
+        x11 = all_x_gps[x_ids][0].mid()
+        x22 = all_x_gps[x_ids][1].mid()
+        if (all_x_gps[x_ids][0].is_empty()):
+            print('yes empty',x_ids,all_x_gps[x_ids][0])
+        #heading_gps = atan2(x22,x11)
+        heading_gps = atan2(x2,x1)
+        #if (heading_gps<0):
+          #heading_gps = heading_gps+2*math.pi
+        e_h = Interval(heading_gps).inflate(0.01)
+        node_heading[x_ids] = e_h
+        gps_theta =  math.atan2(x22-x2,x11-x1)
+        #if (gps_theta<0):
+          #gps_theta = gps_theta+2*math.pi
+        all_x_gpstheta[x_ids] = gps_theta
+    #return all_x_gps,all_x_gpstheta,node_heading
 
 def is_integer(n):
     try:
@@ -285,13 +285,13 @@ def collect_data(j,emergarr,all_x_gps):
     y1_truth = ydist
     #e_y = Interval(-float(df.loc[j][9])*0.01,float(df.loc[j][9])*0.01)#distance based error
     #y1_est = Interval(float(df.loc[j][9])+e_y)
-    y1_est = Interval(y1_truth+e_y)
+    y1_est = Interval(ydist+e_y*ydist)
     y_est = [y1_est]
     if (toa_availability==True):
         benchmark_est = [IntervalVector([b1,b2]),IntervalVector([b1,b2])]
         #y3_est = Interval(float(df.loc[j][9])+e_toa)#toa range
-        y3_est = Interval(y1_truth+e_toa)
-        y_est = [y1_est,y1_est]
+        y3_est = Interval(ydist+e_toa*ydist)
+        y_est = [y1_est,y3_est]
         theta_est = [Interval(theta1+e_t),Interval(theta1+e_t)]#estimated theta of bench nodes 
 
     if (node_benchtruth.get(nodeid)== None):#nodeid, benchtruth location 
@@ -471,7 +471,7 @@ thirty_min_ub = 1800
 jj = 1
 t_ub = 120#update upper bound
 sliding_count = 0
-all_x_gps,all_x_gpstheta,node_heading = gps_estimate(1, rows)
+#all_x_gps,all_x_gpstheta,node_heading = gps_estimate(1, rows)
 while thirty_min_lb <= thirty_min_ub:#while now is below the upper bound of time domain
     time_error_count =0
     #print('33',jj)
@@ -516,3 +516,102 @@ while thirty_min_lb <= thirty_min_ub:#while now is below the upper bound of time
          break  
 
 print(all_er_mean)
+
+# =========== Export data ===========
+import xlwt
+list1 = id_contract
+list2 = all_er_mean
+book = xlwt.Workbook(encoding="utf-8")
+
+i =1
+sheet1 = book.add_sheet("Sheet 1")  
+for n in range(0,len(id_error)):
+    i = i+1#row number
+    gg = id_arr[n]
+    h  = id_error[int(gg)]
+    sheet1.write(i, 0, int(gg))
+    sheet1.write(i, 1, h)
+
+k= 1
+sheet2 = book.add_sheet("Sheet 2")    
+for n in range(0,len(time_error)):
+    k = k+1#row number
+    gg = time_arr[n]
+    h=time_contract[gg]
+    sheet2.write(k, 0, gg)
+    sheet2.write(k, 1, h)
+
+u = 1
+sheet3 = book.add_sheet("Sheet 3")    
+for n in range(0,len(time_error)):
+    u = u+1#row number
+    gg = time_arr[n]
+    h=time_error[gg]
+    m = error_count[gg]
+    dg = h/m
+    sheet3.write(u, 0, gg)
+    sheet3.write(u, 1, h)
+    sheet3.write(u, 2, dg)
+
+y = 1
+sheet4 = book.add_sheet("Sheet 4")    
+for n in range(0,len(time_complexity)):
+    y = y+1#row number
+    gg = time_carr[n]
+    h=time_complexity[gg]
+    sheet4.write(y, 0, gg)
+    sheet4.write(y, 1, h)
+
+vu = 1
+sheet6 = book.add_sheet("Sheet 6")    
+for n in range(0,len(id_time_error)):
+    vu = vu+1#row number
+    gg = id_time_arr[n]
+    h=id_time_error[gg]
+    sheet6.write(vu, 0, gg)
+    sheet6.write(vu, 1, h)
+
+ve = 1
+sheet7 = book.add_sheet("Sheet 7")    
+for n in range(0,len(err_minmax)):
+    ve = ve+1#row number
+    gg = time_arr[n]
+    h=err_minmax[gg]
+    #split h by ;
+    x = h.split(';')
+    m = error_count[gg]
+    #nb rows = error count
+    for pl in range(0,m):
+        sheet7.write(pl, ve, x[pl])
+    sheet7.write(m+1, ve, gg)
+
+kk= 1
+sheet8 = book.add_sheet("Sheet 8")    
+for n in range(0,len(id_contract)):
+    kk = kk+1#row number
+    gg = id_arr[n]
+    h  = id_contract[gg]
+    sheet8.write(kk, 0, int(gg))
+    sheet8.write(kk, 1, h)
+
+vuu = 1
+sheet9 = book.add_sheet("Sheet 9")    
+for n in range(0,len(id_time_cdt)):
+    vuu = vuu+1#row number
+    gg = id_time_arr[n]
+    h=id_time_cdt[gg]
+    sheet9.write(vuu, 0, gg)
+    sheet9.write(vuu, 1, h)
+
+vt = 1
+sheet10 = book.add_sheet("Sheet 10")    
+for n in range(0,len(id_time_est_coord)):
+    vt = vt+1#row number
+    gg = id_time_arr[n]
+    x = gg.split(';')
+    h=id_time_est_coord[gg]
+    sheet10.write(vt, 0, gg)
+    sheet10.write(vt, 1,str(h))
+    sheet10.write(vt, 2, str(node_xtruth[float(x[0])]))
+
+book.save("ord.xls")
