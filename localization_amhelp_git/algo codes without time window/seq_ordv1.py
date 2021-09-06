@@ -575,8 +575,8 @@ while float(df.loc[jj][13]) <= df.loc[rows-1][13]:#while now is below the upper 
          while (float(df.loc[jj][13])> t_ub):    
             t_ub+=120  
          print('routinely update',jj)
-         #node_benchids = {}#data refresh#change done
-         #node_benchtruth = {}
+         node_benchids = {}#data refresh#change done
+         node_benchtruth = {}
          node_y = {}
          node_theta = {}
          node_ids = {}
